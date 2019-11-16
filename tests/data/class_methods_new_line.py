@@ -116,21 +116,21 @@ class ClassWithJustTheDocstring:
 
 
 class ClassWithInit:
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
 class ClassWithTheDocstringAndInit:
     """Just a docstring."""
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
 class ClassWithInitAndVars:
     cls_var = 100
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -139,13 +139,13 @@ class ClassWithInitAndVarsAndDocstring:
 
     cls_var = 100
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
 class ClassWithDecoInit:
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -153,7 +153,7 @@ class ClassWithDecoInitAndVars:
     cls_var = 100
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -163,7 +163,7 @@ class ClassWithDecoInitAndVarsAndDocstring:
     cls_var = 100
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -176,7 +176,7 @@ class ClassSimplestWithInnerWithDocstring:
     class Inner:
         """Just a docstring."""
 
-        def __init__(self):
+        def __init__( self ):
             pass
 
 
@@ -198,7 +198,7 @@ class ClassWithInitWithInner:
     class Inner:
         pass
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -208,7 +208,7 @@ class ClassWithInitAndVarsWithInner:
     class Inner:
         pass
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -220,7 +220,7 @@ class ClassWithInitAndVarsAndDocstringWithInner:
     class Inner:
         pass
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -229,7 +229,7 @@ class ClassWithDecoInitWithInner:
         pass
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -240,7 +240,7 @@ class ClassWithDecoInitAndVarsWithInner:
         pass
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -253,7 +253,7 @@ class ClassWithDecoInitAndVarsAndDocstringWithInner:
         pass
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass
 
 
@@ -266,5 +266,5 @@ class ClassWithDecoInitAndVarsAndDocstringWithInner2:
     cls_var = 100
 
     @deco
-    def __init__(self):
+    def __init__( self ):
         pass

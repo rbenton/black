@@ -18,6 +18,6 @@ this_will_be_wrapped_in_parens, = struct.unpack(b"12345678901234567890")
 ) = (1, 2, 3)
 
 # This is as well.
-(this_will_be_wrapped_in_parens,) = struct.unpack(b"12345678901234567890")
+( this_will_be_wrapped_in_parens, ) = struct.unpack( b"12345678901234567890" )
 
-(a,) = call()
+( a, ) = call()

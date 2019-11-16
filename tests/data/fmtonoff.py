@@ -228,9 +228,9 @@ many_args=[1,2,3]
 def function_signature_stress_test(number:int,no_annotation=None,text:str='default',* ,debug:bool=False,**kwargs) -> str:
  return text[number:-1]
 # fmt: on
-def spaces(a=1, b=(), c=[], d={}, e=True, f=-1, g=1 if False else 2, h="", i=r""):
-    offset = attr.ib(default=attr.Factory(lambda: _r.uniform(1, 2)))
-    assert task._cancel_stack[: len(old_stack)] == old_stack
+def spaces( a=1, b=(), c=[], d={}, e=True, f=-1, g=1 if False else 2, h="", i=r"" ):
+    offset = attr.ib( default=attr.Factory( lambda: _r.uniform( 1, 2 ) ) )
+    assert task._cancel_stack[ : len( old_stack ) ] == old_stack
 
 
 def spaces_types(
@@ -247,7 +247,7 @@ def spaces_types(
     ...
 
 
-def spaces2(result=_core.Value(None)):
+def spaces2( result=_core.Value( None ) ):
     ...
 
 
@@ -294,7 +294,7 @@ def yield_expr():
     # fmt: on
 
 
-def example(session):
+def example( session ):
     # fmt: off
     result = session\
         .query(models.Customer.id)\
@@ -375,13 +375,13 @@ def long_lines():
 
 def single_literal_yapf_disable():
     """Black does not support this."""
-    BAZ = {(1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12)}  # yapf: disable
+    BAZ = { ( 1, 2, 3, 4 ), ( 5, 6, 7, 8 ), ( 9, 10, 11, 12 ) }  # yapf: disable
 
 
 cfg.rule(
     "Default",
     "address",
-    xxxx_xxxx=["xxx-xxxxxx-xxxxxxxxxx"],
+    xxxx_xxxx=[ "xxx-xxxxxx-xxxxxxxxxx" ],
     xxxxxx="xx_xxxxx",
     xxxxxxx="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     xxxxxxxxx_xxxx=True,

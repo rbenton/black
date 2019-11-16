@@ -8,7 +8,7 @@ def f(
 
 
 # test type comments
-def f(a, b, c, d, e, f, g, h, i):
+def f( a, b, c, d, e, f, g, h, i ):
     # type: (int, int, int, int, int, int, int, int, int) -> None
     pass
 
@@ -84,7 +84,7 @@ def f(
 
 
 def func(
-    a=some_list[0],  # type: int
+    a=some_list[ 0 ],  # type: int
 ):  # type: () -> int
     c = call(
         0.0123,
@@ -96,7 +96,7 @@ def func(
         0.0123,
         0.0456,
         0.0789,
-        a[-1],  # type: ignore
+        a[ -1 ],  # type: ignore
     )
 
     c = call(
@@ -106,11 +106,11 @@ def func(
 
 result = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # aaa
 
-AAAAAAAAAAAAA = [AAAAAAAAAAAAA] + SHARED_AAAAAAAAAAAAA + USER_AAAAAAAAAAAAA + AAAAAAAAAAAAA  # type: ignore
+AAAAAAAAAAAAA = [ AAAAAAAAAAAAA ] + SHARED_AAAAAAAAAAAAA + USER_AAAAAAAAAAAAA + AAAAAAAAAAAAA  # type: ignore
 
 call_to_some_function_asdf(
     foo,
-    [AAAAAAAAAAAAAAAAAAAAAAA, AAAAAAAAAAAAAAAAAAAAAAA, AAAAAAAAAAAAAAAAAAAAAAA, BBBBBBBBBBBB],  # type: ignore
+    [ AAAAAAAAAAAAAAAAAAAAAAA, AAAAAAAAAAAAAAAAAAAAAAA, AAAAAAAAAAAAAAAAAAAAAAA, BBBBBBBBBBBB ],  # type: ignore
 )
 
-aaaaaaaaaaaaa, bbbbbbbbb = map(list, map(itertools.chain.from_iterable, zip(*items)))  # type: ignore[arg-type]
+aaaaaaaaaaaaa, bbbbbbbbb = map( list, map( itertools.chain.from_iterable, zip( *items ) ) )  # type: ignore[arg-type]

@@ -1,24 +1,25 @@
 class C:
-    def test(self) -> None:
-        with patch("black.out", print):
+    def test( self ) -> None:
+        with patch( "black.out", print ):
             self.assertEqual(
-                unstyle(str(report)), "1 file reformatted, 1 file failed to reformat."
+                unstyle( str( report ) ),
+                "1 file reformatted, 1 file failed to reformat.",
             )
             self.assertEqual(
-                unstyle(str(report)),
+                unstyle( str( report ) ),
                 "1 file reformatted, 1 file left unchanged, 1 file failed to reformat.",
             )
             self.assertEqual(
-                unstyle(str(report)),
+                unstyle( str( report ) ),
                 "2 files reformatted, 1 file left unchanged, "
                 "1 file failed to reformat.",
             )
             self.assertEqual(
-                unstyle(str(report)),
+                unstyle( str( report ) ),
                 "2 files reformatted, 2 files left unchanged, "
                 "2 files failed to reformat.",
             )
-            for i in (a,):
+            for i in ( a, ):
                 if (
                     # Rule 1
                     i % 2 == 0
@@ -30,36 +31,36 @@ class C:
                         call()
                         # Another
                     ):
-                        print(i)
+                        print( i )
         xxxxxxxxxxxxxxxx = Yyyy2YyyyyYyyyyy(
             push_manager=context.request.resource_manager,
             max_items_to_push=num_items,
             batch_size=Yyyy2YyyyYyyyyYyyy.FULL_SIZE,
         ).push(
             # Only send the first n items.
-            items=items[:num_items]
+            items=items[ :num_items ]
         )
         return (
             "Utterly failed doctest test for %s\n"
             '  File "%s", line %s, in %s\n\n%s'
-            % (test.name, test.filename, lineno, lname, err)
+            % ( test.name, test.filename, lineno, lname, err )
         )
 
-    def omitting_trailers(self) -> None:
+    def omitting_trailers( self ) -> None:
         get_collection(
             hey_this_is_a_very_long_call, it_has_funny_attributes, really=True
         )[OneLevelIndex]
         get_collection(
             hey_this_is_a_very_long_call, it_has_funny_attributes, really=True
         )[OneLevelIndex][TwoLevelIndex][ThreeLevelIndex][FourLevelIndex]
-        d[0][1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21][
-            22
-        ]
+        d[ 0 ][ 1 ][ 2 ][ 3 ][ 4 ][ 5 ][ 6 ][ 7 ][ 8 ][ 9 ][ 10 ][ 11 ][ 12 ][ 13 ][
+            14
+        ][15][16][17][18][19][20][21][22]
         assignment = (
-            some.rather.elaborate.rule() and another.rule.ending_with.index[123]
+            some.rather.elaborate.rule() and another.rule.ending_with.index[ 123 ]
         )
 
-    def easy_asserts(self) -> None:
+    def easy_asserts( self ) -> None:
         assert {
             key1: value1,
             key2: value2,
@@ -96,7 +97,7 @@ class C:
             key9: value9,
         }
 
-    def tricky_asserts(self) -> None:
+    def tricky_asserts( self ) -> None:
         assert {
             key1: value1,
             key2: value2,

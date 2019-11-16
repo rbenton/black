@@ -5,10 +5,10 @@
 -    return ["hello", "world",
 -            "!"]
 +def abc():
-+    return ["hello", "world", "!"]
++    return [ "hello", "world", "!" ]
  
 -print(   "Incorrect formatting"    
 -)
  
-+print("Incorrect formatting")
++print( "Incorrect formatting" )
 +

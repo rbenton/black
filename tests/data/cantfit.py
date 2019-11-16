@@ -61,7 +61,7 @@ this_is_a_ridiculously_long_name_and_nobody_in_their_right_mind_would_use_one_li
     arg1, arg2, arg3
 )
 this_is_a_ridiculously_long_name_and_nobody_in_their_right_mind_would_use_one_like_it = function(
-    [1, 2, 3], arg1, [1, 2, 3], arg2, [1, 2, 3], arg3
+    [ 1, 2, 3 ], arg1, [ 1, 2, 3 ], arg2, [ 1, 2, 3 ], arg3
 )
 # long function name
 normal_name = (
@@ -71,7 +71,7 @@ normal_name = but_the_function_name_is_now_ridiculously_long_and_it_is_still_sup
     arg1, arg2, arg3
 )
 normal_name = but_the_function_name_is_now_ridiculously_long_and_it_is_still_super_annoying(
-    [1, 2, 3], arg1, [1, 2, 3], arg2, [1, 2, 3], arg3
+    [ 1, 2, 3 ], arg1, [ 1, 2, 3 ], arg2, [ 1, 2, 3 ], arg3
 )
 # long arguments
 normal_name = normal_function_name(
@@ -86,7 +86,7 @@ for key in """
     username
 """.split():
     if key in self.connect_kwargs:
-        raise ValueError(err.format(key))
+        raise ValueError( err.format( key ) )
 concatenated_strings = (
     "some strings that are"
     "concatenated implicitly, so if you put them on separate"

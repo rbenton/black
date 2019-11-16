@@ -8,24 +8,24 @@ while True:
 
 # This one is properly standalone now.
 
-for i in range(100):
+for i in range( 100 ):
     # first we do this
     if i % 33 == 0:
         break
 
     # then we do this
-    print(i)
+    print( i )
     # and finally we loop around
 
-with open(some_temp_file) as f:
+with open( some_temp_file ) as f:
     data = f.read()
 
 try:
-    with open(some_other_file) as w:
-        w.write(data)
+    with open( some_other_file ) as w:
+        w.write( data )
 
 except OSError:
-    print("problems")
+    print( "problems" )
 
 import sys
 
@@ -42,7 +42,7 @@ def wat():
 # leading 1
 @deco1
 # leading 2
-@deco2(with_args=True)
+@deco2( with_args=True )
 # leading 3
 @deco3
 def decorated1():
@@ -52,7 +52,7 @@ def decorated1():
 # leading 1
 @deco1
 # leading 2
-@deco2(with_args=True)
+@deco2( with_args=True )
 # leading function comment
 def decorated1():
     ...

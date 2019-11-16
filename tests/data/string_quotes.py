@@ -30,7 +30,7 @@ brown fox\n\
 jumps over\n\
 the \'lazy\' dog.\n\
 '
-re.compile(r'[\\"]')
+re.compile( r'[\\"]' )
 "x = ''; y = \"\""
 "x = '''; y = \"\""
 "x = ''''; y = \"\""
@@ -85,7 +85,7 @@ brown fox\n\
 jumps over\n\
 the 'lazy' dog.\n\
 "
-re.compile(r'[\\"]')
+re.compile( r'[\\"]' )
 "x = ''; y = \"\""
 "x = '''; y = \"\""
 "x = ''''; y = \"\""

@@ -1564,6 +1564,8 @@ class Line:
         indent = "    " * self.depth
         leaves = iter(self.leaves)
         first = next(leaves)
+        if first.type in CLOSING_BRACKETS and first.prefix:
+            first.prefix = ''
         res = f"{first.prefix}{indent}{first.value}"
         for leaf in leaves:
             res += str(leaf)
@@ -1898,7 +1900,7 @@ BRACKET = {token.LPAR: token.RPAR, token.LSQB: token.RSQB, token.LBRACE: token.R
 OPENING_BRACKETS = set(BRACKET.keys())
 CLOSING_BRACKETS = set(BRACKET.values())
 BRACKETS = OPENING_BRACKETS | CLOSING_BRACKETS
-ALWAYS_NO_SPACE = CLOSING_BRACKETS | {token.COMMA, STANDALONE_COMMENT}
+ALWAYS_NO_SPACE = {token.COMMA, STANDALONE_COMMENT}
 
 
 def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
@@ -1930,8 +1932,11 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
     prev = leaf.prev_sibling
     if not prev:
         prevp = preceding_leaf(p)
-        if not prevp or prevp.type in OPENING_BRACKETS:
+        if not prevp:
             return NO
+
+        if prevp.type in OPENING_BRACKETS:
+            return SPACE if prevp.value and t not in CLOSING_BRACKETS else NO
 
         if t == token.COLON:
             if prevp.type == token.COLON:
@@ -1985,10 +1990,13 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
             return NO
 
     elif prev.type in OPENING_BRACKETS:
-        return NO
+        return SPACE if prev.value and t not in CLOSING_BRACKETS else NO
 
     if p.type in {syms.parameters, syms.arglist}:
         # untyped function signatures or calls
+        if prev and t == token.RPAR and v:
+            return SPACE
+
         if not prev or prev.type != token.COMMA:
             return NO
 
@@ -2000,7 +2008,7 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
     elif p.type == syms.typedargslist:
         # typed function signatures
         if not prev:
-            return NO
+            return SPACE
 
         if t == token.EQUAL:
             if prev.type != syms.tname:
@@ -2023,8 +2031,11 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
 
     elif p.type == syms.trailer:
         # attributes and calls
-        if t == token.LPAR or t == token.RPAR:
+        if t == token.LPAR:
             return NO
+
+        if prev and t in CLOSING_BRACKETS and v:
+            return SPACE
 
         if not prev:
             if t == token.DOT:
@@ -2053,7 +2064,7 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
 
     elif p.type == syms.decorator:
         # decorators
-        return NO
+        return SPACE if t == token.RPAR else NO
 
     elif p.type == syms.dotted_name:
         if prev:
@@ -2126,6 +2137,9 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool) -> str:  # noqa: C901
                 return NO
 
     elif p.type == syms.sliceop:
+        return NO
+
+    if t in CLOSING_BRACKETS and not v:
         return NO
 
     return SPACE

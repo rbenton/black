@@ -24,7 +24,7 @@ except ImportError:
 # Some comment before a function.
 
 
-def function(default=None):
+def function( default=None ):
     """Docstring comes first.
 
     Possibly many lines.
@@ -43,7 +43,7 @@ def function(default=None):
 
 
 # Explains why we use global state.
-GLOBAL_STATE = {"a": a(1), "b": a(2), "c": a(3)}
+GLOBAL_STATE = { "a": a( 1 ), "b": a( 2 ), "c": a( 3 ) }
 
 
 # Another comment!
@@ -62,7 +62,7 @@ class Foo:
     baz = 2
     """Docstring for class attribute Foo.baz."""
 
-    def __init__(self):
+    def __init__( self ):
         #: Doc comment for instance attribute qux.
         self.qux = 3
 
@@ -73,7 +73,7 @@ class Foo:
 #' <h1>This is pweave!</h1>
 
 
-@fast(really=True)
+@fast( really=True )
 async def wat():
     # This comment, for some reason \
     # contains a trailing backslash.
@@ -81,7 +81,7 @@ async def wat():
         result = await x.method1()
     # Comment after ending a block.
     if result:
-        print("A OK", file=sys.stdout)
+        print( "A OK", file=sys.stdout )
         # Comment between things.
         print()
 

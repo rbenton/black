@@ -116,22 +116,22 @@ def func_no_args():
         raise RuntimeError
     if False:
         ...
-    for i in range(10):
-        print(i)
+    for i in range( 10 ):
+        print( i )
         continue
-    exec("new-style exec", {}, {})
+    exec( "new-style exec", {}, {} )
     return None
 
 
-async def coroutine(arg, exec=False):
+async def coroutine( arg, exec=False ):
     "Single-line docstring. Multiline is harder to reformat."
     async with some_connection() as conn:
-        await conn.do_what_i_mean("SELECT bobby, tables FROM xkcd", timeout=2)
-    await asyncio.sleep(1)
+        await conn.do_what_i_mean( "SELECT bobby, tables FROM xkcd", timeout=2 )
+    await asyncio.sleep( 1 )
 
 
 @asyncio.coroutine
-@some_decorator(with_args=True, many_args=[1, 2, 3])
+@some_decorator( with_args=True, many_args=[ 1, 2, 3 ] )
 def function_signature_stress_test(
     number: int,
     no_annotation=None,
@@ -140,12 +140,12 @@ def function_signature_stress_test(
     debug: bool = False,
     **kwargs,
 ) -> str:
-    return text[number:-1]
+    return text[ number:-1 ]
 
 
-def spaces(a=1, b=(), c=[], d={}, e=True, f=-1, g=1 if False else 2, h="", i=r""):
-    offset = attr.ib(default=attr.Factory(lambda: _r.uniform(10000, 200000)))
-    assert task._cancel_stack[: len(old_stack)] == old_stack
+def spaces( a=1, b=(), c=[], d={}, e=True, f=-1, g=1 if False else 2, h="", i=r"" ):
+    offset = attr.ib( default=attr.Factory( lambda: _r.uniform( 10000, 200000 ) ) )
+    assert task._cancel_stack[ : len( old_stack ) ] == old_stack
 
 
 def spaces_types(
@@ -162,18 +162,18 @@ def spaces_types(
     ...
 
 
-def spaces2(result=_core.Value(None)):
-    assert fut is self._read_fut, (fut, self._read_fut)
+def spaces2( result=_core.Value( None ) ):
+    assert fut is self._read_fut, ( fut, self._read_fut )
 
 
-def example(session):
+def example( session ):
     result = (
-        session.query(models.Customer.id)
+        session.query( models.Customer.id )
         .filter(
             models.Customer.account_id == account_id,
             models.Customer.email == email_address,
         )
-        .order_by(models.Customer.id.asc())
+        .order_by( models.Customer.id.asc() )
         .all()
     )
 
@@ -223,14 +223,14 @@ def long_lines():
 
 def trailing_comma():
     mapping = {
-        A: 0.25 * (10.0 / 12),
-        B: 0.1 * (10.0 / 12),
-        C: 0.1 * (10.0 / 12),
-        D: 0.1 * (10.0 / 12),
+        A: 0.25 * ( 10.0 / 12 ),
+        B: 0.1 * ( 10.0 / 12 ),
+        C: 0.1 * ( 10.0 / 12 ),
+        D: 0.1 * ( 10.0 / 12 ),
     }
 
 
-def f(a, **kwargs,) -> A:
+def f( a, **kwargs, ) -> A:
     return (
         yield from A(
             very_long_argument_name1=very_long_value_for_the_argument,
@@ -241,4 +241,4 @@ def f(a, **kwargs,) -> A:
 
 
 def __await__():
-    return (yield)
+    return ( yield )
