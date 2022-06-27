@@ -64,7 +64,7 @@ setup(
     python_requires=">=3.6",
     zip_safe=False,
     install_requires=[
-        "click>=6.5",
+        "click>=6.5, <8.1",
         "attrs>=18.1.0",
         "appdirs",
         "toml>=0.9.4",
