@@ -16,7 +16,6 @@ match more := (than, one), indeed,:
 
 
 # output
-
 match maybe, multiple:
     case perhaps, 5:
         pass
@@ -27,12 +26,12 @@ match maybe, multiple:
         pass
 
 
-match more := (than, one), indeed,:
-    case _, (5, 6):
+match more := ( than, one ), indeed,:
+    case _, ( 5, 6 ):
         pass
     case (
-        [[5], (6)],
-        [7],
+        [ [ 5 ], ( 6 ) ],
+        [ 7 ],
     ):
         pass
     case _:

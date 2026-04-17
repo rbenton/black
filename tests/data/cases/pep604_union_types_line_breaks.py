@@ -150,11 +150,11 @@ x = (
 
 
 # remove unnecessary paren
-def foo(i: int) -> None: ...
+def foo( i: int ) -> None: ...
 
 
 # this is a syntax error in the type annotation according to mypy, but it's not invalid *python* code, so make sure we don't mess with it and make it so.
-def foo(i: (int,)) -> None: ...
+def foo( i: ( int, ) ) -> None: ...
 
 
 def foo(
@@ -171,7 +171,7 @@ def foo(
     pass
 
 
-@app.get("/path/")
+@app.get( "/path/" )
 async def foo(
     q: str | None = Query(
         None, title="Some long title", description="Some long description"

@@ -135,11 +135,11 @@ def func[
 
 
 # output
-def plain[T, B](a: T, b: T) -> T:
+def plain[ T, B ]( a: T, b: T ) -> T:
     return a
 
 
-def arg_magic[T, B](
+def arg_magic[ T, B ](
     a: T,
     b: T,
 ) -> T:
@@ -165,11 +165,11 @@ def both_magic[
     return a
 
 
-def plain_multiline[T, B](a: T, b: T) -> T:
+def plain_multiline[ T, B ]( a: T, b: T ) -> T:
     return a
 
 
-def arg_magic_multiline[T, B](
+def arg_magic_multiline[ T, B ](
     a: T,
     b: T,
 ) -> T:
@@ -195,22 +195,22 @@ def both_magic_multiline[
     return a
 
 
-def plain_mixed1[T, B](a: T, b: T) -> T:
+def plain_mixed1[ T, B ]( a: T, b: T ) -> T:
     return a
 
 
-def plain_mixed2[T, B](a: T, b: T) -> T:
+def plain_mixed2[ T, B ]( a: T, b: T ) -> T:
     return a
 
 
-def arg_magic_mixed1[T, B](
+def arg_magic_mixed1[ T, B ](
     a: T,
     b: T,
 ) -> T:
     return a
 
 
-def arg_magic_mixed2[T, B](
+def arg_magic_mixed2[ T, B ](
     a: T,
     b: T,
 ) -> T:
@@ -255,9 +255,9 @@ def both_magic_mixed2[
     return a
 
 
-def something_something_function[T: Model](
-    param: list[int], other_param: type[T], *, some_other_param: bool = True
-) -> QuerySet[T]:
+def something_something_function[ T: Model ](
+    param: list[ int ], other_param: type[ T ], *, some_other_param: bool = True
+) -> QuerySet[ T ]:
     pass
 
 
@@ -295,7 +295,7 @@ def with_random_comments[
     return a
 
 
-def func[T, U, Z: int]():  # comment  # comment  # comment
+def func[ T, U, Z: int ]():  # comment  # comment  # comment
     pass
 
 

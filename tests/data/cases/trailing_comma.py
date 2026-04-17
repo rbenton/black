@@ -24,9 +24,8 @@ h = {
 }
 
 # output
-
 e = {
-    "a": fun(msg, "ts"),
+    "a": fun( msg, "ts" ),
     "longggggggggggggggid": ...,
     "longgggggggggggggggggggkey": ...,
     "created": ...,

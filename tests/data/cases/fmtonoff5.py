@@ -85,8 +85,6 @@ elif   unformatted:
 
 
 # output
-
-
 # Regression test for https://github.com/psf/black/issues/3129.
 setup(
     entry_points={
@@ -133,12 +131,12 @@ if True:
         print ( "This won't be formatted" )
     print ( "This won't be formatted either" )
 else:
-    print("This will be formatted")
+    print( "This will be formatted" )
 
 
 # Regression test for https://github.com/psf/black/issues/3184.
 class A:
-    async def call(param):
+    async def call( param ):
         if param:
             # fmt: off
             if param[0:4] in (
@@ -150,18 +148,18 @@ class A:
             elif param[0:4] in ("ZZZZ",):
                 print ( "This won't be formatted either" )
 
-        print("This will be formatted")
+        print( "This will be formatted" )
 
 
 # Regression test for https://github.com/psf/black/issues/2985.
-class Named(t.Protocol):
+class Named( t.Protocol ):
     # fmt: off
     @property
     def  this_wont_be_formatted ( self ) -> str: ...
 
 
-class Factory(t.Protocol):
-    def this_will_be_formatted(self, **kwargs) -> Named: ...
+class Factory( t.Protocol ):
+    def this_will_be_formatted( self, **kwargs ) -> Named: ...
 
     # fmt: on
 

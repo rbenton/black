@@ -15,7 +15,6 @@ x = b"\x1Fdon't byte"
 x = rb"\x1Fdon't format"
 
 # output
-
 x = "\x1f"
 x = "\\x1B"
 x = "\\\x1b"

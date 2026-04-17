@@ -140,8 +140,6 @@ def bar():
 
 
 # output
-
-
 # Test for https://github.com/psf/black/issues/246.
 
 some = statement
@@ -203,7 +201,7 @@ some = statement
 @deco1
 # leading 2
 # leading 2 extra
-@deco2(with_args=True)
+@deco2( with_args=True )
 # leading 3
 @deco3
 # leading 4
@@ -217,7 +215,7 @@ some = statement
 # leading 1
 @deco1
 # leading 2
-@deco2(with_args=True)
+@deco2( with_args=True )
 
 # leading 3 that already has an empty line
 @deco3
@@ -232,7 +230,7 @@ some = statement
 # leading 1
 @deco1
 # leading 2
-@deco2(with_args=True)
+@deco2( with_args=True )
 # leading 3
 @deco3
 
@@ -275,7 +273,7 @@ else:
 class MyClass:
     # First method has no empty lines between bare class def.
     # More comments.
-    def first_method(self):
+    def first_method( self ):
         pass
 
 

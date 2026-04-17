@@ -33,7 +33,6 @@ match x:
         y = 1
 
 # output
-
 match match:
     case "test" if case != "not very loooooooooooooog condition":  # comment
         pass
@@ -66,7 +65,7 @@ match smth:
 
 # case black_test_patma_052 (originally in the pattern_matching_complex test case)
 match x:
-    case [1, 0] if x := x[:0]:
+    case [ 1, 0 ] if x := x[ :0 ]:
         y = 1
-    case [1, 0] if x := x[:0]:
+    case [ 1, 0 ] if x := x[ :0 ]:
         y = 1

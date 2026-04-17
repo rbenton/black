@@ -45,7 +45,7 @@ D4 = {
         "string",
     ): (
         "This is a really really really long string that has to go inside of a dictionary. It is %s bad (#%d)."
-        % ("soooo", 2)
+        % ( "soooo", 2 )
     ),
 }
 
@@ -125,7 +125,7 @@ fmt_string2 = "But what about when the string is {} but {}".format(
 
 old_fmt_string1 = (
     "While we are on the topic of %s, we should also note that old-style formatting must also be preserved, since some %s still uses it."
-    % ("formatting", "code")
+    % ( "formatting", "code" )
 )
 
 old_fmt_string2 = "This is a %s %s %s %s" % (
@@ -184,7 +184,7 @@ assert some_type_of_boolean_expression, (
 
 assert some_type_of_boolean_expression, (
     "Followed by a really really really long string that is used to provide context to the AssertionError exception, which uses dynamic %s %s."
-    % ("string", "formatting")
+    % ( "string", "formatting" )
 )
 
 some_function_call(
@@ -228,15 +228,15 @@ func_with_bad_comma(
 )
 
 func_with_bad_parens_that_wont_fit_in_one_line(
-    ("short string that should have parens stripped"), x, y, z
+    ( "short string that should have parens stripped" ), x, y, z
 )
 
 func_with_bad_parens_that_wont_fit_in_one_line(
-    x, y, ("short string that should have parens stripped"), z
+    x, y, ( "short string that should have parens stripped" ), z
 )
 
 func_with_bad_parens(
-    ("short string that should have parens stripped"),
+    ( "short string that should have parens stripped" ),
     x,
     y,
     z,
@@ -245,7 +245,7 @@ func_with_bad_parens(
 func_with_bad_parens(
     x,
     y,
-    ("short string that should have parens stripped"),
+    ( "short string that should have parens stripped" ),
     z,
 )
 
@@ -259,7 +259,7 @@ annotated_variable: Final = (
 annotated_variable: Final = (
     "This is a large string that has a type annotation attached to it. A type annotation should NOT stop a long string from being wrapped."
 )
-annotated_variable: Literal["fakse_literal"] = (
+annotated_variable: Literal[ "fakse_literal" ] = (
     "This is a large string that has a type annotation attached to it. A type annotation should NOT stop a long string from being wrapped."
 )
 
@@ -269,7 +269,7 @@ backslashes = "This is a really 'long' string with \"embedded double quotes\" an
 
 short_string = "Hi" " there."
 
-func_call(short_string=("Hi" " there."))
+func_call( short_string=( "Hi" " there." ) )
 
 raw_strings = r"Don't" " get" r" merged" " unless they are all raw."
 

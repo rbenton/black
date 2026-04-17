@@ -17,14 +17,12 @@ with \
 
 
 # output
-
-
 # This file uses pattern matching introduced in Python 3.10.
 
 
 match http_code:
     case 404:
-        print("Not found")
+        print( "Not found" )
 
 
 with (

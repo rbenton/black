@@ -97,7 +97,7 @@ dict_with_really_long_names = {
 ]
 
 [
-    (foobar_very_long_key, foobar_very_long_value)
+    ( foobar_very_long_key, foobar_very_long_value )
     for foobar_very_long_key, foobar_very_long_value in (
         foobar_very_long_dictionary.items()
     )
@@ -105,14 +105,14 @@ dict_with_really_long_names = {
 
 # Don't split the `in` if it's not too long
 lcomp3 = [
-    element.split("\n", 1)[0]
+    element.split( "\n", 1 )[ 0 ]
     for element in collection.select_elements()
     # right
     if element is not None
 ]
 
 # Don't remove parens around ternaries
-expected = [i for i in (a if b else c)]
+expected = [ i for i in ( a if b else c ) ]
 
 # Nested arrays
 # First in will not be split because it would still be too long

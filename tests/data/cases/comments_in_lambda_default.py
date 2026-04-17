@@ -11,7 +11,6 @@ result = (lambda x=(
 ): x)
 
 # output
-
 help(
     lambda x=(
     # comment

@@ -7,7 +7,6 @@ normal_name = normal_function_name(
 )
 
 # output
-
 # long arguments
 normal_name = normal_function_name(
     "but with super long string arguments that on their own exceed the line limit so"

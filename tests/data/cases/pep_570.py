@@ -1,8 +1,8 @@
-def positional_only_arg(a, /):
+def positional_only_arg( a, / ):
     pass
 
 
-def all_markers(a, b, /, c, d, *, e, f):
+def all_markers( a, b, /, c, d, *, e, f ):
     pass
 
 
@@ -20,7 +20,7 @@ def all_markers_with_args_and_kwargs(
     pass
 
 
-def all_markers_with_defaults(a, b=1, /, c=2, d=3, *, e=4, f=5):
+def all_markers_with_defaults( a, b=1, /, c=2, d=3, *, e=4, f=5 ):
     pass
 
 

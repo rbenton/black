@@ -145,15 +145,15 @@ def SimplePyFn(
 
 # output
 # normal, short, function definition
-def foo(a, b) -> tuple[int, float]: ...
+def foo( a, b ) -> tuple[ int, float ]: ...
 
 
 # normal, short, function definition w/o return type
-def foo(a, b): ...
+def foo( a, b ): ...
 
 
 # no splitting
-def foo(a: A, b: B) -> list[p, q]:
+def foo( a: A, b: B ) -> list[ p, q ]:
     pass
 
 
@@ -182,7 +182,7 @@ def a() -> tuple[
 
 
 # magic trailing comma in return type, params
-def foo(a: A, b: B) -> list[
+def foo( a: A, b: B ) -> list[
     p,
     q,
 ]:
@@ -210,7 +210,7 @@ def aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa(
 # this should maybe split on rhs?
 def aaaaaaaaaaaaaaaaa(
     bbbbbbbbbbbbbbbbbb,
-) -> list[Ccccccccccccccccccccccccccccccccccccccccccccccccccc, Dddddd]: ...
+) -> list[ Ccccccccccccccccccccccccccccccccccccccccccccccccccc, Dddddd ]: ...
 
 
 # long return type, no param list
@@ -228,7 +228,7 @@ def thiiiiiiiiiiiiiiiiiis_iiiiiiiiiiiiiiiiiiiiiiiiiiiiiis_veeeeeeeeeeeeeeeeeeeee
 
 # long function name, no param list
 def thiiiiiiiiiiiiiiiiiis_iiiiiiiiiiiiiiiiiiiiiiiiiiiiiis_veeeeeeeeeeeeeeeeeeeeeeery_looooooong() -> (
-    list[int, float]
+    list[ int, float ]
 ): ...
 
 
@@ -239,7 +239,7 @@ def thiiiiiiiiiiiiiiiiiis_iiiiiiiiiiiiiiiiiiiiiiiiiiiiiis_veeeeeeeeeeeeeeeeeeeee
 
 
 # unskippable type hint (??)
-def foo(a) -> list[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]:  # type: ignore
+def foo( a ) -> list[ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ]:  # type: ignore
     pass
 
 
@@ -253,12 +253,12 @@ def foo(
 
 def foo(
     a,
-    b: list[Bad],
+    b: list[ Bad ],
 ): ...  # type: ignore
 
 
 # don't lose any comments (no magic)
-def foo(a, b) -> list[a, b]:  # 1  # 2  # 3  # 4  # 5
+def foo( a, b ) -> list[ a, b ]:  # 1  # 2  # 3  # 4  # 5
     ...  # 6
 
 
@@ -266,12 +266,12 @@ def foo(a, b) -> list[a, b]:  # 1  # 2  # 3  # 4  # 5
 def foo(  # 1
     a,  # 2
     b,
-) -> list[a, b]:  # 3  # 4  # 5
+) -> list[ a, b ]:  # 3  # 4  # 5
     ...  # 6
 
 
 # don't lose any comments (return type magic)
-def foo(a, b) -> list[  # 1  # 2  # 3
+def foo( a, b ) -> list[  # 1  # 2  # 3
     a,  # 4
     b,
 ]:  # 5
@@ -292,11 +292,11 @@ def foo(  # 1
 # real life example
 def SimplePyFn(
     context: hl.GeneratorContext,
-    buffer_input: Buffer[UInt8, 2],
-    func_input: Buffer[Int32, 2],
-    float_arg: Scalar[Float32],
+    buffer_input: Buffer[ UInt8, 2 ],
+    func_input: Buffer[ Int32, 2 ],
+    float_arg: Scalar[ Float32 ],
     offset: int = 0,
 ) -> tuple[
-    Buffer[UInt8, 2],
-    Buffer[UInt8, 2],
+    Buffer[ UInt8, 2 ],
+    Buffer[ UInt8, 2 ],
 ]: ...

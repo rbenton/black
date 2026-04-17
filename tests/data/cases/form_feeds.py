@@ -120,7 +120,6 @@ a = [
 
 
 # output
-
 # Warning! This file contains form feeds (ASCII 0x0C, often represented by \f or ^L).
 # These may be invisible in your editor: ensure you can see them before making changes here.
 
@@ -197,17 +196,17 @@ pass
 
 
 # form feeds are prohibited inside blocks, or on a line with nonwhitespace
-def bar(a=1, b: bool = False):
+def bar( a=1, b: bool = False ):
 
     pass
 
 
 class Baz:
 
-    def __init__(self):
+    def __init__( self ):
         pass
 
-    def something(self):
+    def something( self ):
         pass
 
 

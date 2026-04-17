@@ -21,18 +21,16 @@ def docstring_multiline():
 
 
 # output
-
-
 #!/usr/bin/env python3
 
 name = "Łukasz"
-(f"hello {name}", f"hello {name}")
-(b"", b"")
-("", "")
-(r"", R"")
+( f"hello {name}", f"hello {name}" )
+( b"", b"" )
+( "", "" )
+( r"", R"" )
 
-(rf"", rf"", Rf"", Rf"", rf"", rf"", Rf"", Rf"")
-(rb"", rb"", Rb"", Rb"", rb"", rb"", Rb"", Rb"")
+( rf"", rf"", Rf"", Rf"", rf"", rf"", Rf"", Rf"" )
+( rb"", rb"", Rb"", Rb"", rb"", rb"", Rb"", Rb"" )
 
 
 def docstring_singleline():

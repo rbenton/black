@@ -29,8 +29,6 @@ def func(
 
 
 # output
-
-
 def func(
     arg1,
     arg2,
@@ -55,5 +53,5 @@ def func(
 
 def func(
     argument: "int |" "str",
-) -> Set["int |" " str"]:
+) -> Set[ "int |" " str" ]:
     pass

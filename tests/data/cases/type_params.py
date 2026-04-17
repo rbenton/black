@@ -18,21 +18,19 @@ def weird_syntax[T: lambda: 42, U: a or b](): pass
 def name_3[name_0: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa if aaaaaaaaaaa else name_3](): pass
 
 # output
-
-
-def func[T]():
+def func[ T ]():
     pass
 
 
-async def func[T]():
+async def func[ T ]():
     pass
 
 
-class C[T]:
+class C[ T ]:
     pass
 
 
-def all_in[T: int, U: (bytes, str), *Ts, **P]():
+def all_in[ T: int, U: ( bytes, str ), *Ts, **P ]():
     pass
 
 
@@ -62,7 +60,7 @@ def magic[
     pass
 
 
-def weird_syntax[T: lambda: 42, U: a or b]():
+def weird_syntax[ T: lambda: 42, U: a or b ]():
     pass
 
 

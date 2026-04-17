@@ -46,13 +46,13 @@ except AttributeError as err:
 # we do not remove brackets to preserve AST.
 try:
     a.something
-except (AttributeError,) as err:
+except ( AttributeError, ) as err:
     raise err
 
 # This is a tuple of exceptions. Do not remove brackets.
 try:
     a.something
-except (AttributeError, ValueError) as err:
+except ( AttributeError, ValueError ) as err:
     raise err
 
 # Test long variants.

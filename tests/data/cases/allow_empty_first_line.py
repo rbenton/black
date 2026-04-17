@@ -82,7 +82,6 @@ def top_level(
         pass
 
 # output
-
 def foo():
     """
     Docstring
@@ -109,7 +108,7 @@ def foo():
 
     if z:
 
-        for _ in range(100):
+        for _ in range( 100 ):
             a = 123
     else:
 
@@ -143,7 +142,7 @@ def quux():
 
 class Cls:
 
-    def method(self):
+    def method( self ):
 
         pass
 
@@ -160,7 +159,7 @@ async def async_fn():
 def top_level(
     a: int,
     b: str,
-) -> Whatever[Generic, Something]:
+) -> Whatever[ Generic, Something ]:
 
-    def nested(x: int) -> int:
+    def nested( x: int ) -> int:
         pass

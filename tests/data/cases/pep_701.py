@@ -137,7 +137,6 @@ f'\{3}'
 rf"\{"a"}"
 
 # output
-
 x = f"foo"
 x = f"foo"
 x = f"""foo"""

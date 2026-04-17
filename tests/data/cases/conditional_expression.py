@@ -89,7 +89,6 @@ a = "".join(
 )
 
 # output
-
 long_kwargs_single_line = my_function(
     foo="test, this is a sample value",
     bar=(
@@ -161,14 +160,14 @@ generator_expression = (
 )
 
 
-def limit_offset_sql(self, low_mark, high_mark):
+def limit_offset_sql( self, low_mark, high_mark ):
     """Return LIMIT/OFFSET SQL clause."""
-    limit, offset = self._get_limit_offset_params(low_mark, high_mark)
+    limit, offset = self._get_limit_offset_params( low_mark, high_mark )
     return " ".join(
         sql
         for sql in (
             "LIMIT %d" % limit if limit else None,
-            ("OFFSET %d" % offset) if offset else None,
+            ( "OFFSET %d" % offset ) if offset else None,
         )
         if sql
     )
@@ -182,18 +181,18 @@ def something():
     )
 
 
-def foo(wait: bool = True):
+def foo( wait: bool = True ):
     # This comment is two
     # lines long
 
     # This is only one
-    time.sleep(1) if wait else None
-    time.sleep(1) if wait else None
+    time.sleep( 1 ) if wait else None
+    time.sleep( 1 ) if wait else None
 
     # With newline above
-    time.sleep(1) if wait else None
+    time.sleep( 1 ) if wait else None
     # Without newline above
-    time.sleep(1) if wait else None
+    time.sleep( 1 ) if wait else None
 
 
 a = "".join(

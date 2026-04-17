@@ -21,7 +21,6 @@ def h():
     # bye
 
 # output
-
 def f():  # type: ignore
     ...
 

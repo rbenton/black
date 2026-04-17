@@ -11,7 +11,6 @@ f"Tried directories {str(rootdirs)} \
 but none started with prefix {parentdir_prefix}"
 
 # output
-
 f"f-string without formatted values is just a string"
 f"{{NOT a formatted value}}"
 f'{{NOT \'a\' "formatted" "value"}}'

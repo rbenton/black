@@ -124,13 +124,12 @@ def multiline_backslash_3():
   already escaped \\ '''
 
 # output
-
 class ALonelyClass:
     '''
     A multiline class docstring.
     '''
 
-    def AnEquallyLonelyMethod(self):
+    def AnEquallyLonelyMethod( self ):
         '''
         A multiline method docstring'''
         pass

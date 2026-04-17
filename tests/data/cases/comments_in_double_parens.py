@@ -57,30 +57,29 @@ if (
 
 
 # output
+if (
+    True
+    # sdf
+):
+    print( "hw" )
 
 if (
     True
     # sdf
 ):
-    print("hw")
-
-if (
-    True
-    # sdf
-):
-    print("hw")
+    print( "hw" )
 
 if (
     # type: ignore
     True
 ):
-    print("hw")
+    print( "hw" )
 
 if (
     True
     # type: ignore
 ):
-    print("hw")
+    print( "hw" )
 
 if (
     # a long comment about

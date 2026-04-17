@@ -228,13 +228,12 @@ def foo():
     """
 
 # output
-
 class MyClass:
     """Multiline
     class docstring
     """
 
-    def method(self):
+    def method( self ):
         """Multiline
         method docstring
         """
@@ -443,7 +442,7 @@ def multiline_docstring_at_line_limit():
     second line----------------------------------------------------------------------"""
 
 
-def stable_quote_normalization_with_immediate_inner_single_quote(self):
+def stable_quote_normalization_with_immediate_inner_single_quote( self ):
     """'<text here>
 
     <text here, since without another non-empty line black is stable>

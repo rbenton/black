@@ -53,7 +53,6 @@ with hmm_but_this_should_get_two_preceding_newlines():
     pass
 
 # output
-
 def f(
     a,
     **kwargs,
@@ -61,9 +60,9 @@ def f(
     with cache_dir():
         if something:
             result = CliRunner().invoke(
-                black.main, [str(src1), str(src2), "--diff", "--check"]
+                black.main, [ str( src1 ), str( src2 ), "--diff", "--check" ]
             )
-    limited.append(-limited.pop())  # negate top
+    limited.append( -limited.pop() )  # negate top
     return A(
         very_long_argument_name1=very_long_value_for_the_argument,
         very_long_argument_name2=-very.long.value.for_the_argument,
@@ -77,14 +76,14 @@ def g():
     def inner():
         pass
 
-    print("Inner defs should breathe a little.")
+    print( "Inner defs should breathe a little." )
 
 
 def h():
     def inner():
         pass
 
-    print("Inner defs should breathe a little.")
+    print( "Inner defs should breathe a little." )
 
 
 if os.name == "posix":
@@ -108,8 +107,8 @@ elif os.name == "nt":
 elif False:
 
     class IHopeYouAreHavingALovelyDay:
-        def __call__(self):
-            print("i_should_be_followed_by_only_one_newline")
+        def __call__( self ):
+            print( "i_should_be_followed_by_only_one_newline" )
 
 else:
 

@@ -91,8 +91,6 @@ with (x, y) as z:
 
 
 # output
-
-
 with (
     make_context_manager1() as cm1,
     make_context_manager2() as cm2,
@@ -146,7 +144,7 @@ with (
 
 
 with (
-    mock.patch.object(self.my_runner, "first_method", autospec=True) as mock_run_adb,
+    mock.patch.object( self.my_runner, "first_method", autospec=True ) as mock_run_adb,
     mock.patch.object(
         self.my_runner, "second_method", autospec=True, return_value="foo"
     ),
@@ -174,12 +172,12 @@ async def func():
         pass
 
     async with (
-        some_function(argument1, argument2, argument3="some_value") as some_cm,
-        some_other_function(argument1, argument2, argument3="some_value"),
+        some_function( argument1, argument2, argument3="some_value" ) as some_cm,
+        some_other_function( argument1, argument2, argument3="some_value" ),
     ):
         pass
 
 
 # don't remove the brackets here, it changes the meaning of the code.
-with (x, y) as z:
+with ( x, y ) as z:
     pass

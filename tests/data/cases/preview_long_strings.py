@@ -347,8 +347,6 @@ x = {
 }
 
 # output
-
-
 x = (
     "This is a really long string that can't possibly be expected to fit all together"
     " on one line. In fact it may even take up three or more lines... like four or"
@@ -416,18 +414,18 @@ D3 = {
 }
 
 D4 = {
-    "A long and ridiculous {}".format(string_key): (
+    "A long and ridiculous {}".format( string_key ): (
         "This is a really really really long string that has to go i,side of a"
         " dictionary. It is soooo bad."
     ),
-    some_func("calling", "some", "stuff"): (
+    some_func( "calling", "some", "stuff" ): (
         "This is a really really really long string that has to go inside of a"
-        " dictionary. It is {soooo} bad (#{x}).".format(sooo="soooo", x=2)
+        " dictionary. It is {soooo} bad (#{x}).".format( sooo="soooo", x=2 )
     ),
     "A %s %s"
-    % ("formatted", "string"): (
+    % ( "formatted", "string" ): (
         "This is a really really really long string that has to go inside of a"
-        " dictionary. It is %s bad (#%d)." % ("soooo", 2)
+        " dictionary. It is %s bad (#%d)." % ( "soooo", 2 )
     ),
 }
 
@@ -451,7 +449,7 @@ L1 = [
         " together on one line. Also it is inside a list literal, so it's expected to"
         " be wrapped in parens when splitting to avoid implicit str concatenation."
     ),
-    short_call("arg", {"key": "value"}),
+    short_call( "arg", { "key": "value" } ),
     (
         "This is another really really (not really) long string that also can't be"
         " expected to fit on one line and is, like the other string, inside a list"
@@ -472,7 +470,7 @@ S1 = {
         " together on one line. Also it is inside a set literal, so it's expected to be"
         " wrapped in parens when splitting to avoid implicit str concatenation."
     ),
-    short_call("arg", {"key": "value"}),
+    short_call( "arg", { "key": "value" } ),
     (
         "This is another really really (not really) long string that also can't be"
         " expected to fit on one line and is, like the other string, inside a set"
@@ -493,7 +491,7 @@ T1 = (
         " together on one line. Also it is inside a tuple literal, so it's expected to"
         " be wrapped in parens when splitting to avoid implicit str concatenation."
     ),
-    short_call("arg", {"key": "value"}),
+    short_call( "arg", { "key": "value" } ),
     (
         "This is another really really (not really) long string that also can't be"
         " expected to fit on one line and is, like the other string, inside a tuple"
@@ -608,7 +606,7 @@ raw_string = (
 
 fmt_string1 = (
     "We also need to be sure to preserve any and all {} which may or may not be"
-    " attached to the string in question.".format("method calls")
+    " attached to the string in question.".format( "method calls" )
 )
 
 fmt_string2 = "But what about when the string is {} but {}".format(
@@ -618,7 +616,7 @@ fmt_string2 = "But what about when the string is {} but {}".format(
 
 old_fmt_string1 = (
     "While we are on the topic of %s, we should also note that old-style formatting"
-    " must also be preserved, since some %s still uses it." % ("formatting", "code")
+    " must also be preserved, since some %s still uses it." % ( "formatting", "code" )
 )
 
 old_fmt_string2 = "This is a %s %s %s %s" % (
@@ -680,7 +678,9 @@ assert some_type_of_boolean_expression, (
 
 assert some_type_of_boolean_expression, (
     "Followed by a really really really long string that is used to provide context to"
-    " the AssertionError exception, which uses dynamic string {}.".format("formatting")
+    " the AssertionError exception, which uses dynamic string {}.".format(
+        "formatting"
+    )
 )
 
 assert some_type_of_boolean_expression, (
@@ -691,7 +691,7 @@ assert some_type_of_boolean_expression, (
 assert some_type_of_boolean_expression, (
     "Followed by a really really really long string that is used to provide context to"
     " the AssertionError exception, which uses dynamic %s %s."
-    % ("string", "formatting")
+    % ( "string", "formatting" )
 )
 
 some_function_call(
@@ -714,7 +714,7 @@ some_function_call(
 
 return (
     "A really really really really really really really really really really really"
-    " really really long {} {}".format("return", "value")
+    " really really long {} {}".format( "return", "value" )
 )
 
 func_with_bad_comma(
@@ -770,7 +770,7 @@ annotated_variable: Final = (
     "This is a large string that has a type annotation attached to it. A type"
     " annotation should NOT stop a long string from being wrapped."
 )
-annotated_variable: Literal["fakse_literal"] = (
+annotated_variable: Literal[ "fakse_literal" ] = (
     "This is a large string that has a type annotation attached to it. A type"
     " annotation should NOT stop a long string from being wrapped."
 )
@@ -791,7 +791,7 @@ backslashes = (
 
 short_string = "Hi there."
 
-func_call(short_string="Hi there.")
+func_call( short_string="Hi there." )
 
 raw_strings = r"Don't" " get" r" merged" " unless they are all raw."
 
@@ -882,7 +882,7 @@ dict_with_lambda_values = {
 code = (
     "    return [\n"
     + ", \n".join(
-        "        (%r, self.%s, visitor.%s)" % (attrname, attrname, visit_name)
+        "        (%r, self.%s, visitor.%s)" % ( attrname, attrname, visit_name )
         for attrname, visit_name in names
     )
     + "\n    ]\n"
@@ -890,7 +890,7 @@ code = (
 
 
 # Test case of an outer string' parens enclose an inner string's parens.
-call(body="%s %s" % (",".join(items), suffix))
+call( body="%s %s" % ( ",".join( items ), suffix ) )
 
 log.info(
     f'Skipping: {desc["db_id"]=} {desc["ms_name"]} {money=} {dte=} {pos_share=}'

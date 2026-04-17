@@ -27,14 +27,14 @@ from .config import (
 )
 
 result = 1  # A simple comment
-result = (1,)  # Another one
+result = ( 1, )  # Another one
 
 result = 1  #  type: ignore
 result = 1  # This comment is talking about type: ignore
-square = Square(4)  #  type: Optional[Square]
+square = Square( 4 )  #  type: Optional[Square]
 
 
-def function(a: int = 42):
+def function( a: int = 42 ):
     """This docstring is already formatted
     a
     b

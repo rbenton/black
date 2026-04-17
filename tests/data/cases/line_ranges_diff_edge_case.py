@@ -22,7 +22,7 @@ print ( "format me" )
 # perform formatting in a single pass.
 
 print ( "format me" )
-print("format me")
-print("format me")
-print("format me")
-print("format me")
+print( "format me" )
+print( "format me" )
+print( "format me" )
+print( "format me" )

@@ -21,8 +21,6 @@ print(
 )
 
 # output
-
-
 # Test cases separate from `prefer_rhs_split.py` that contains unformatted source.
 
 # Left hand side fits in a single line but will still be exploded by the
@@ -42,7 +40,7 @@ print(
 # Make when when the left side of assignment plus the opening paren "... = (" is
 # exactly line length limit + 1, it won't be split like that.
 xxxxxxxxx_yyy_zzzzzzzz[
-    xx.xxxxxx(x_yyy_zzzzzz.xxxxx[0]), x_yyy_zzzzzz.xxxxxx(xxxx=1)
+    xx.xxxxxx( x_yyy_zzzzzz.xxxxx[ 0 ] ), x_yyy_zzzzzz.xxxxxx( xxxx=1 )
 ] = 1
 
 # Regression test for #1187

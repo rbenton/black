@@ -167,23 +167,23 @@ except* ValueError as e:
 # remains unchanged
 try:
     pass
-except (ValueError,):
+except ( ValueError, ):
     pass
 
 try:
     pass
-except* (ValueError,):
+except* ( ValueError, ):
     pass
 
 # remains unchanged
 try:
     pass
-except (ValueError,) as e:
+except ( ValueError, ) as e:
     pass
 
 try:
     pass
-except* (ValueError,) as e:
+except* ( ValueError, ) as e:
     pass
 
 # remains unchanged
@@ -211,12 +211,12 @@ except* ValueError, TypeError, KeyboardInterrupt:
 # parenthesis are not removed
 try:
     pass
-except (ValueError, TypeError, KeyboardInterrupt) as e:
+except ( ValueError, TypeError, KeyboardInterrupt ) as e:
     pass
 
 try:
     pass
-except* (ValueError, TypeError, KeyboardInterrupt) as e:
+except* ( ValueError, TypeError, KeyboardInterrupt ) as e:
     pass
 
 # parenthesis are removed
@@ -237,7 +237,7 @@ try:
         pass
     except TypeError, KeyboardInterrupt:
         pass
-except (ValueError,):
+except ( ValueError, ):
     pass
 
 try:
@@ -245,5 +245,5 @@ try:
         pass
     except* TypeError, KeyboardInterrupt:
         pass
-except* (ValueError,):
+except* ( ValueError, ):
     pass

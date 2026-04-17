@@ -93,8 +93,6 @@ def g():
 
 
 # output
-
-
 """Docstring."""
 
 
@@ -117,7 +115,7 @@ def f():
 
     prev = leaf.prev_sibling
     if not prev:
-        prevp = preceding_leaf(p)
+        prevp = preceding_leaf( p )
         if not prevp or prevp.type in OPENING_BRACKETS:
 
             return NO
@@ -169,7 +167,7 @@ def g():
 
     prev = leaf.prev_sibling
     if not prev:
-        prevp = preceding_leaf(p)
+        prevp = preceding_leaf( p )
 
         if not prevp or prevp.type in OPENING_BRACKETS:
             # Start of the line or a bracketed expression.
