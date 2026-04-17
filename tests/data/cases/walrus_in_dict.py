@@ -3,4 +3,4 @@
 }
 
 # output
-{"is_update": (up := commit.hash in update_hashes)}
+{ "is_update": ( up := commit.hash in update_hashes ) }

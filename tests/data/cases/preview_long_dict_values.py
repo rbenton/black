@@ -183,7 +183,7 @@ tasks = {
         baz,
     ): src,
     loop.run_in_executor(): src,
-    loop.run_in_executor(xx_xxxxxxxxxxxxxxxxx_xxxxx_xxxxxxx_xxxxxxxxxxxxxx): src,
+    loop.run_in_executor( xx_xxxxxxxxxxxxxxxxx_xxxxx_xxxxxxx_xxxxxxxxxxxxxx ): src,
     loop.run_in_executor(
         xx_xxxxxxxxxxxxxxxxx_xxxxx_xxxxxxx_xxxxxxxxxxxxxx_xxxxx_xxxxx
     ): src,
@@ -199,7 +199,7 @@ tasks = {
     )
     for src in sources
 }
-tasks = {key_name: foobar for src in sources}
+tasks = { key_name: foobar for src in sources }
 tasks = {
     get_key_name(
         src,
@@ -220,7 +220,7 @@ tasks = {
     )
     for src in sources
 }
-tasks = {get_key_name(): foobar for src in sources}
+tasks = { get_key_name(): foobar for src in sources }
 
 
 # Delimiters inside the value
@@ -228,19 +228,19 @@ def foo():
     def bar():
         x = {
             common.models.DateTimeField: (
-                datetime(2020, 1, 31, tzinfo=utc) + timedelta(days=i)
+                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i)
             ),
         }
         x = {
             common.models.DateTimeField: (
-                datetime(2020, 1, 31, tzinfo=utc) + timedelta(days=i)
+                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i)
             ),
         }
         x = {
             "foobar": 123 + 456,
         }
         x = {
-            "foobar": (123) + 456,
+            "foobar": ( 123 ) + 456,
         }
 
 
@@ -261,7 +261,7 @@ my_dict = {
     "a key in my dict": (
         MyClass.some_attribute.first_call()
         .second_call()
-        .third_call(some_args="some value")
+        .third_call( some_args="some value" )
     )
 }
 
@@ -295,7 +295,7 @@ class Random:
                         "latitude": 1,
                         "longitude": 2,
                         "actionTimestamp": (
-                            Timestamp(seconds=1530584000, nanos=0).ToJsonString()
+                            Timestamp( seconds=1530584000, nanos=0).ToJsonString()
                         ),
                     }
                 },

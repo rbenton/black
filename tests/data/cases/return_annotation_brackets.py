@@ -93,34 +93,34 @@ def foo(a,b) -> tuple[int, int, int,]:
 
 # output
 # Control
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
 # Remove the brackets
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
 # Some newline variations
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
 # Don't lose the comments
-def double(a: int) -> int:  # Hello
+def double( a: int ) -> int:  # Hello
     return 2 * a
 
 
-def double(a: int) -> int:  # Hello
+def double( a: int ) -> int:  # Hello
     return 2 * a
 
 
@@ -174,11 +174,11 @@ def foo(
 
 # Deeply nested brackets
 # with *interesting* spacing
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
-def double(a: int) -> int:
+def double( a: int ) -> int:
     return 2 * a
 
 
@@ -189,7 +189,7 @@ def foo() -> (
 
 
 # Return type with commas
-def foo() -> tuple[int, int, int]:
+def foo() -> tuple[ int, int, int ]:
     return 2
 
 
@@ -211,7 +211,7 @@ def foo() -> tuple[
 
 
 # Magic trailing comma example, with params
-def foo(a, b) -> tuple[
+def foo( a, b ) -> tuple[
     int,
     int,
     int,

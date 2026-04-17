@@ -18,17 +18,21 @@ file_input
  '('
       power
         NAME
+ ' '
  'Visitor'
         trailer
           LSQB
  '['
           NAME
+ ' '
  'T'
           RSQB
+ ' '
  ']'
         /trailer
       /power
       RPAR
+ ' '
  ')'
       COLON
  ':'
@@ -71,6 +75,7 @@ file_input
  '('
             typedargslist
               NAME
+ ' '
  'self'
               COMMA
  ','
@@ -86,6 +91,7 @@ file_input
               /tname
             /typedargslist
             RPAR
+ ' '
  ')'
           /parameters
           RARROW
@@ -99,8 +105,10 @@ file_input
               LSQB
  '['
               NAME
+ ' '
  'T'
               RSQB
+ ' '
  ']'
             /trailer
           /power
@@ -122,7 +130,7 @@ file_input
                 term
                   STRING
  ' '
- "' '"
+ '" "'
                   STAR
  ' '
  '*'
@@ -132,6 +140,7 @@ file_input
  '('
                     term
                       NUMBER
+ ' '
  '2'
                       STAR
  ' '
@@ -149,6 +158,7 @@ file_input
                       /power
                     /term
                     RPAR
+ ' '
  ')'
                   /atom
                 /term
@@ -169,6 +179,7 @@ file_input
  '('
                   arglist
                     NAME
+ ' '
  'node'
                     COMMA
  ','
@@ -177,6 +188,7 @@ file_input
  'Node'
                   /arglist
                   RPAR
+ ' '
  ')'
                 /trailer
               /power
@@ -204,6 +216,7 @@ file_input
  '('
                         power
                           NAME
+ ' '
  'node'
                           trailer
                             DOT
@@ -213,6 +226,7 @@ file_input
                           /trailer
                         /power
                         RPAR
+ ' '
  ')'
                       /trailer
                     /power
@@ -231,7 +245,8 @@ file_input
                       arglist
                         fstring
                           FSTRING_START
- "f'"
+ ' '
+ 'f"'
                           fstring_replacement_field
                             LBRACE
  '{'
@@ -249,7 +264,7 @@ file_input
  '}'
                           /fstring_replacement_field
                           FSTRING_END
- "'"
+ '"'
                         /fstring
                         COMMA
  ','
@@ -260,10 +275,11 @@ file_input
                           EQUAL
  '='
                           STRING
- "'yellow'"
+ '"yellow"'
                         /argument
                       /arglist
                       RPAR
+ ' '
  ')'
                     /trailer
                   /power
@@ -344,8 +360,10 @@ file_input
                               LPAR
  '('
                               NAME
+ ' '
  'child'
                               RPAR
+ ' '
  ')'
                             /trailer
                           /power
@@ -392,7 +410,8 @@ file_input
                       arglist
                         fstring
                           FSTRING_START
- "f'"
+ ' '
+ 'f"'
                           fstring_replacement_field
                             LBRACE
  '{'
@@ -412,7 +431,7 @@ file_input
  '}'
                           /fstring_replacement_field
                           FSTRING_END
- "'"
+ '"'
                         /fstring
                         COMMA
  ','
@@ -423,7 +442,7 @@ file_input
                           EQUAL
  '='
                           STRING
- "'yellow'"
+ '"yellow"'
                         /argument
                         COMMA
  ','
@@ -438,6 +457,7 @@ file_input
                         /argument
                       /arglist
                       RPAR
+ ' '
  ')'
                     /trailer
                   /power
@@ -487,6 +507,7 @@ file_input
                         arglist
                           power
                             NAME
+ ' '
  'node'
                             trailer
                               DOT
@@ -506,6 +527,7 @@ file_input
  '('
                               power
                                 NAME
+ ' '
  'node'
                                 trailer
                                   DOT
@@ -515,11 +537,13 @@ file_input
                                 /trailer
                               /power
                               RPAR
+ ' '
  ')'
                             /trailer
                           /power
                         /arglist
                         RPAR
+ ' '
  ')'
                       /trailer
                     /power
@@ -538,7 +562,8 @@ file_input
                       arglist
                         fstring
                           FSTRING_START
- "f'"
+ ' '
+ 'f"'
                           fstring_replacement_field
                             LBRACE
  '{'
@@ -556,7 +581,7 @@ file_input
  '}'
                           /fstring_replacement_field
                           FSTRING_END
- "'"
+ '"'
                         /fstring
                         COMMA
  ','
@@ -567,7 +592,7 @@ file_input
                           EQUAL
  '='
                           STRING
- "'blue'"
+ '"blue"'
                         /argument
                         COMMA
  ','
@@ -582,6 +607,7 @@ file_input
                         /argument
                       /arglist
                       RPAR
+ ' '
  ')'
                     /trailer
                   /power
@@ -621,7 +647,8 @@ file_input
                           arglist
                             fstring
                               FSTRING_START
- "f'"
+ ' '
+ 'f"'
                               FSTRING_MIDDLE
  ' '
                               fstring_replacement_field
@@ -645,7 +672,7 @@ file_input
  '}'
                               /fstring_replacement_field
                               FSTRING_END
- "'"
+ '"'
                             /fstring
                             COMMA
  ','
@@ -656,7 +683,7 @@ file_input
                               EQUAL
  '='
                               STRING
- "'green'"
+ '"green"'
                             /argument
                             COMMA
  ','
@@ -682,6 +709,7 @@ file_input
                             /argument
                           /arglist
                           RPAR
+ ' '
  ')'
                         /trailer
                       /power
@@ -703,7 +731,8 @@ file_input
                       arglist
                         fstring
                           FSTRING_START
- "f'"
+ ' '
+ 'f"'
                           FSTRING_MIDDLE
  ' '
                           fstring_replacement_field
@@ -727,7 +756,7 @@ file_input
  '}'
                           /fstring_replacement_field
                           FSTRING_END
- "'"
+ '"'
                         /fstring
                         COMMA
  ','
@@ -738,7 +767,7 @@ file_input
                           EQUAL
  '='
                           STRING
- "'blue'"
+ '"blue"'
                         /argument
                         COMMA
  ','
@@ -753,6 +782,7 @@ file_input
                         /argument
                       /arglist
                       RPAR
+ ' '
  ')'
                     /trailer
                   /power
@@ -789,6 +819,7 @@ file_input
  '('
               typedargslist
                 NAME
+ ' '
  'cls'
                 COMMA
  ','
@@ -804,6 +835,7 @@ file_input
                 /tname
               /typedargslist
               RPAR
+ ' '
  ')'
             /parameters
             RARROW
@@ -842,8 +874,10 @@ file_input
                         LSQB
  '['
                         NAME
+ ' '
  'None'
                         RSQB
+ ' '
  ']'
                       /trailer
                     /power
@@ -876,6 +910,7 @@ file_input
  '('
                     power
                       NAME
+ ' '
  'v'
                       trailer
                         DOT
@@ -888,21 +923,26 @@ file_input
  '('
                         power
                           NAME
+ ' '
  'lib2to3_parse'
                           trailer
                             LPAR
  '('
                             NAME
+ ' '
  'code'
                             RPAR
+ ' '
  ')'
                           /trailer
                         /power
                         RPAR
+ ' '
  ')'
                       /trailer
                     /power
                     RPAR
+ ' '
  ')'
                   /trailer
                 /power

@@ -35,8 +35,6 @@ del ([], name_1, name_2), [(), [], name_4, name_3], name_1[[name_2 for name_1 in
 del (),
 
 # output
-
-
 # long variable name
 this_is_a_ridiculously_long_name_and_nobody_in_their_right_mind_would_use_one_like_it = (
     0
@@ -56,7 +54,7 @@ this_is_a_ridiculously_long_name_and_nobody_in_their_right_mind_would_use_one_li
     arg1, arg2, arg3
 )
 this_is_a_ridiculously_long_name_and_nobody_in_their_right_mind_would_use_one_like_it = function(
-    [1, 2, 3], arg1, [1, 2, 3], arg2, [1, 2, 3], arg3
+    [ 1, 2, 3 ], arg1, [ 1, 2, 3 ], arg2, [ 1, 2, 3 ], arg3
 )
 # long function name
 normal_name = (
@@ -69,7 +67,7 @@ normal_name = (
 )
 normal_name = (
     but_the_function_name_is_now_ridiculously_long_and_it_is_still_super_annoying(
-        [1, 2, 3], arg1, [1, 2, 3], arg2, [1, 2, 3], arg3
+        [ 1, 2, 3 ], arg1, [ 1, 2, 3 ], arg2, [ 1, 2, 3 ], arg3
     )
 )
 string_variable_name = "a string that is waaaaaaaayyyyyyyy too long, even in parens, there's nothing you can do"  # noqa
@@ -79,7 +77,7 @@ for key in """
     username
 """.split():
     if key in self.connect_kwargs:
-        raise ValueError(err.format(key))
+        raise ValueError( err.format( key ) )
 concatenated_strings = (
     "some strings that are "
     "concatenated implicitly, so if you put them on separate "
@@ -93,8 +91,8 @@ del (
     need_more_to_make_the_line_long_enough,
 )
 del (
-    ([], name_1, name_2),
-    [(), [], name_4, name_3],
-    name_1[[name_2 for name_1 in name_0]],
+    ( [], name_1, name_2 ),
+    [ (), [], name_4, name_3 ],
+    name_1[ [ name_2 for name_1 in name_0 ] ],
 )
-del ((),)
+del ( (), )

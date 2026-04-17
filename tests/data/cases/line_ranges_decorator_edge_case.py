@@ -4,5 +4,5 @@ class Foo:
     @overload
     def foo(): ...
 
-    def fox(self):
+    def fox( self ):
         print()

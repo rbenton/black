@@ -572,11 +572,9 @@ s = f'Lorem Ipsum is simply dummy text of the printing and typesetting industry:
 
 
 # output
-
-
 class A:
     def foo():
-        result = type(message)("")
+        result = type( message )( "" )
 
 
 # Don't merge multiline (e.g. triple-quoted) strings.
@@ -614,19 +612,19 @@ class A:
         os.system(
             "This is a regression test. xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx"
             " xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx"
-            " xxxx.".format("xxxxxxxxxx", "xxxxxx", "xxxxxxxxxx")
+            " xxxx.".format( "xxxxxxxxxx", "xxxxxx", "xxxxxxxxxx" )
         )
 
 
 class A:
     def foo():
-        XXXXXXXXXXXX.append((
+        XXXXXXXXXXXX.append( (
             "xxx_xxxxxxxxxx(xxxxx={}, xxxx={}, xxxxx, xxxx_xxxx_xxxxxxxxxx={})".format(
                 xxxxx, xxxx, xxxx_xxxx_xxxxxxxxxx
             ),
             my_var,
             my_other_var,
-        ))
+        ) )
 
 
 class A:
@@ -643,12 +641,12 @@ class A:
             )
 
 
-def foo(xxxx):
+def foo( xxxx ):
     for xxx_xxxx, _xxx_xxx, _xxx_xxxxx, xxx_xxxx in xxxx:
         for xxx in xxx_xxxx:
-            assert ("x" in xxx) or (xxx in xxx_xxx_xxxxx), (
+            assert ( "x" in xxx ) or ( xxx in xxx_xxx_xxxxx ), (
                 "{0} xxxxxxx xx {1}, xxx {1} xx xxx xx xxxx xx xxx xxxx: xxx xxxx {2}"
-                .format(xxx_xxxx, xxx, xxxxxx.xxxxxxx(xxx_xxx_xxxxx))
+                .format( xxx_xxxx, xxx, xxxxxx.xxxxxxx( xxx_xxx_xxxxx ) )
             )
 
 
@@ -665,7 +663,7 @@ class A:
                     )
                 )
             ),
-            (x, y, z),
+            ( x, y, z ),
         )
 
 
@@ -690,7 +688,7 @@ class A:
 
 func_call_where_string_arg_has_method_call_and_bad_parens(
     "A long string with {}. This string is so long that it is ridiculous. It can't fit"
-    " on one line at alllll.".format("formatting"),
+    " on one line at alllll.".format( "formatting" ),
 )
 
 func_call_where_string_arg_has_old_fmt_and_bad_parens(
@@ -700,22 +698,22 @@ func_call_where_string_arg_has_old_fmt_and_bad_parens(
 
 func_call_where_string_arg_has_old_fmt_and_bad_parens(
     "A long string with {}. This {} is so long that it is ridiculous. It can't fit on"
-    " one line at alllll." % ("formatting", "string"),
+    " one line at alllll." % ( "formatting", "string" ),
 )
 
 
 class A:
-    def append(self):
+    def append( self ):
         if True:
             xxxx.xxxxxxx.xxxxx(
                 "xxxxxxxxxx xxxx xx xxxxxx(%x) xx %x xxxx xx xxx %x.xx"
-                % (len(self) + 1, xxxx.xxxxxxxxxx, xxxx.xxxxxxxxxx)
+                % ( len( self ) + 1, xxxx.xxxxxxxxxx, xxxx.xxxxxxxxxx )
                 + " %.3f (%s) to %.3f (%s).\n"
                 % (
                     xxxx.xxxxxxxxx,
-                    xxxx.xxxxxxxxxxxxxx(xxxx.xxxxxxxxx),
+                    xxxx.xxxxxxxxxxxxxx( xxxx.xxxxxxxxx ),
                     x,
-                    xxxx.xxxxxxxxxxxxxx(xx),
+                    xxxx.xxxxxxxxxxxxxx( xx ),
                 )
             )
 
@@ -728,7 +726,7 @@ class A:
             '"xxxx xxxxxxx xxxxxx xxxx; xxxx xxxxxx_xxxxx xxxxxx xxxx; '
             "xxxx.xxxx_xxxxxx(['xxxx.xxx'], xxxx.xxxxxxx().xxxxxxxxxx)\" ",
             None,
-            ("xxxxxxxxxxx",),
+            ( "xxxxxxxxxxx", ),
         ),
 
 
@@ -739,7 +737,7 @@ class A:
             "xxxx, ('xxxxxxx xxxxxx xxxx, xxxx') xxxxxx_xxxxx xxxxxx xxxx; "
             "xxxx.xxxx_xxxxxx(['xxxx.xxx'], xxxx.xxxxxxx().xxxxxxxxxx)\" ",
             None,
-            ("xxxxxxxxxxx",),
+            ( "xxxxxxxxxxx", ),
         ),
 
 
@@ -758,13 +756,13 @@ xxxxxxx = {
 
 
 class A:
-    def foo(self):
+    def foo( self ):
         if True:
             xxxxx_xxxxxxxxxxxx(
                 "xxx xxxxxx xxx xxxxxxxxx.xx xx xxxxxxxx.  xxx xxxxxxxxxxxxx.xx"
                 " xxxxxxx "
                 + "xx xxxxxx xxxxxx xxxxxx xx xxxxxxx xxx xxx ${0} xx x xxxxxxxx xxxxx"
-                .xxxxxx(xxxxxx_xxxxxx_xxx)
+                .xxxxxx( xxxxxx_xxxxxx_xxx )
             )
 
 
@@ -782,14 +780,14 @@ class A:
 
 
 class A:
-    def xxxx_xxx_xx_xxxxxxxxxx_xxxx_xxxxxxxxx(xxxx):
+    def xxxx_xxx_xx_xxxxxxxxxx_xxxx_xxxxxxxxx( xxxx ):
         xxxxxxxx = [
             xxxxxxxxxxxxxxxx(
                 "xxxx",
                 xxxxxxxxxxx={
                     "xxxx": 1.0,
                 },
-                xxxxxx={"xxxxxx 1": xxxxxx(xxxx="xxxxxx 1", xxxxxx=600.0)},
+                xxxxxx={ "xxxxxx 1": xxxxxx( xxxx="xxxxxx 1", xxxxxx=600.0 ) },
                 xxxxxxxx_xxxxxxx=0.0,
             ),
             xxxxxxxxxxxxxxxx(
@@ -797,7 +795,7 @@ class A:
                 xxxxxxxxxxx={
                     "xxxx": 1.0,
                 },
-                xxxxxx={"xxxxxx 1": xxxxxx(xxxx="xxxxxx 1", xxxxxx=200.0)},
+                xxxxxx={ "xxxxxx 1": xxxxxx( xxxx="xxxxxx 1", xxxxxx=200.0 ) },
                 xxxxxxxx_xxxxxxx=0.0,
             ),
             xxxxxxxxxxxxxxxx(
@@ -840,18 +838,18 @@ def foo():
     )
 
 
-some_tuple = ("some string", "some string which should be joined")
+some_tuple = ( "some string", "some string which should be joined" )
 
 some_commented_string = (  # This comment stays at the top.
     "This string is long but not so long that it needs hahahah toooooo be so greatttt"
     " {} that I just can't think of any more good words to say about it at"
-    " allllllllllll".format("ha")  # comments here are fine
+    " allllllllllll".format( "ha" )  # comments here are fine
 )
 
 some_commented_string = (
     "This string is long but not so long that it needs hahahah toooooo be so greatttt"  # But these
     " {} that I just can't think of any more good words to say about it at"  # comments will stay
-    " allllllllllll".format("ha")  # comments here are fine
+    " allllllllllll".format( "ha" )  # comments here are fine
 )
 
 lpar_and_rpar_have_comments = func_call(  # LPAR Comment
@@ -923,7 +921,7 @@ def foo():
 class A:
     class B:
         def foo():
-            if not hasattr(module, name):
+            if not hasattr( module, name ):
                 raise ValueError(
                     "Could not find object %s in %s.\n"
                     "Please note that you cannot serialize things like inner "
@@ -931,20 +929,20 @@ class A:
                     "body to use migrations.\n"
                     "For more information, see "
                     "https://docs.djangoproject.com/en/%s/topics/migrations/#serializing-values"
-                    % (name, module_name, get_docs_version())
+                    % ( name, module_name, get_docs_version() )
                 )
 
 
 class A:
     class B:
         def foo():
-            if not hasattr(module, name):
+            if not hasattr( module, name ):
                 raise ValueError(
                     "Could not find object %s in %s.\nPlease note that you cannot"
                     " serialize things like inner classes. Please move the object into"
                     " the main module body to use migrations.\nFor more information,"
                     " see https://docs.djangoproject.com/en/%s/topics/migrations/#serializing-values"
-                    % (name, module_name, get_docs_version())
+                    % ( name, module_name, get_docs_version() )
                 )
 
 
@@ -956,8 +954,8 @@ x = (
 )
 
 
-class Step(StepBase):
-    def who(self):
+class Step( StepBase ):
+    def who( self ):
         self.cmd = (
             "SR AAAA-CORRECT NAME IS {last_name} {first_name}{middle_name}"
             " {title}/P{passenger_association}".format(
@@ -970,7 +968,7 @@ class Step(StepBase):
         )
 
 
-xxxxxxx_xxxxxx_xxxxxxx = xxx([
+xxxxxxx_xxxxxx_xxxxxxx = xxx( [
     xxxxxxxxxxxx(
         xxxxxx_xxxxxxx=(
             '((x.aaaaaaaaa = "xxxxxx.xxxxxxxxxxxxxxxxxxxxx") || (x.xxxxxxxxx ='
@@ -980,13 +978,13 @@ xxxxxxx_xxxxxx_xxxxxxx = xxx([
             '"xxx:xxx:xxx::cccccccccccc:xxxxxxx-xxxx/xxxxxxxxxxx/xxxxxxxxxxxxxxxxx") && '
         )
     )
-])
+] )
 
 if __name__ == "__main__":
-    for i in range(4, 8):
+    for i in range( 4, 8 ):
         cmd = (
             r"for pid in $(ps aux | grep paster | grep -v grep | grep '\-%d' | awk"
-            r" '{print $2}'); do kill $pid; done" % (i)
+            r" '{print $2}'); do kill $pid; done" % ( i )
         )
 
 
@@ -998,13 +996,13 @@ def A():
                     def F():
                         def G():
                             assert (
-                                c_float(val[0][0] / val[0][1]).value
-                                == c_float(value[0][0] / value[0][1]).value
+                                c_float( val[ 0 ][ 0 ] / val[ 0 ][ 1 ] ).value
+                                == c_float( value[ 0 ][ 0 ] / value[ 0 ][ 1 ] ).value
                             ), "%s didn't roundtrip" % tag
 
 
-class xxxxxxxxxxxxxxxxxxxxx(xxxx.xxxxxxxxxxxxx):
-    def xxxxxxx_xxxxxx(xxxx):
+class xxxxxxxxxxxxxxxxxxxxx( xxxx.xxxxxxxxxxxxx ):
+    def xxxxxxx_xxxxxx( xxxx ):
         assert xxxxxxx_xxxx in [
             x.xxxxx.xxxxxx.xxxxx.xxxxxx,
             x.xxxxx.xxxxxx.xxxxx.xxxx,
@@ -1013,7 +1011,7 @@ class xxxxxxxxxxxxxxxxxxxxx(xxxx.xxxxxxxxxxxxx):
         )
 
 
-value.__dict__[key] = (
+value.__dict__[ key] = (
     "test"  # set some Thrift field to non-None in the struct aa bb cc dd ee
 )
 
@@ -1079,7 +1077,7 @@ def _legacy_listen_examples():
 
 
 class X:
-    async def foo(self):
+    async def foo( self ):
         msg = ""
         for candidate in CANDIDATES:
             msg += (
@@ -1095,49 +1093,49 @@ temp_msg = (
 )
 
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     == "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     != "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     <= "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     >= "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     < "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     > "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', "
     "'grykangaroo$', 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', "
     "'o$', 'oo$', 'roo$', 'rykangaroo$', 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     in "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', 'grykangaroo$',"
     " 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', 'o$', 'oo$', 'roo$', 'rykangaroo$',"
     " 'ykangaroo$']"
 )
 assert (
-    str(suffix_arr)
+    str( suffix_arr )
     not in "['$', 'angaroo$', 'angrykangaroo$', 'aroo$', 'garoo$', 'grykangaroo$',"
     " 'kangaroo$', 'ngaroo$', 'ngrykangaroo$', 'o$', 'oo$', 'roo$',"
     " 'rykangaroo$', 'ykangaroo$']"
@@ -1244,7 +1242,7 @@ xxxx(
 a_dict = {
     "/this/is/a/very/very/very/very/very/very/very/very/very/very/long/key/without/spaces":
     # And there is a comment before the value
-    ("item1", "item2", "item3"),
+    ( "item1", "item2", "item3" ),
 }
 
 # Regression test for https://github.com/psf/black/issues/3506.

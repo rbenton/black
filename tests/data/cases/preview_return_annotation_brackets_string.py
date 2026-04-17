@@ -8,7 +8,6 @@ def frobnicate(a) -> "ThisIsTrulyUnreasonablyExtremelyLongClassName | list[ThisI
     pass
 
 # output
-
 # Long string example
 def frobnicate() -> (
     "ThisIsTrulyUnreasonablyExtremelyLongClassName |"

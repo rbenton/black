@@ -36,8 +36,6 @@ hotkeys = {
 
 
 # output
-
-
 # Multiple fmt: skip on string literals
 a = (
     "this should "  # fmt: skip

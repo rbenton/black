@@ -34,7 +34,6 @@ a = (
 )
 
 # output
-
 # Regression tests for long f-strings, including examples from issue #3623
 
 a = (
@@ -64,4 +63,3 @@ a = f'"{"b"}"'
 a = f'"{"b"}"'
 
 a = r'\"{"b"}\"'
-

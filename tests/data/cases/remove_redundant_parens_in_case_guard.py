@@ -60,7 +60,6 @@ match 1:
 
 
 # output
-
 match 1:
     case _ if True:
         pass

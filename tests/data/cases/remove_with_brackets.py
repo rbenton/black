@@ -67,24 +67,24 @@ with (a, (b for c in d)):
     pass
 
 # output
-with open("bla.txt"):
+with open( "bla.txt" ):
     pass
 
-with open("bla.txt"), open("bla.txt"):
+with open( "bla.txt" ), open( "bla.txt" ):
     pass
 
-with open("bla.txt") as f:
+with open( "bla.txt" ) as f:
     pass
 
 # Remove brackets within alias expression
-with open("bla.txt") as f:
+with open( "bla.txt" ) as f:
     pass
 
 # Remove brackets around one-line context managers
-with open("bla.txt") as f, open("x"):
+with open( "bla.txt" ) as f, open( "x" ):
     pass
 
-with open("bla.txt") as f, open("x"):
+with open( "bla.txt" ) as f, open( "x" ):
     pass
 
 with CtxManager1() as example1, CtxManager2() as example2:
@@ -108,7 +108,7 @@ with (
     ...
 
 # Don't touch assignment expressions
-with (y := open("./test.py")) as f:
+with ( y := open( "./test.py" ) ) as f:
     pass
 
 # Deeply nested examples
@@ -116,30 +116,30 @@ with (y := open("./test.py")) as f:
 # around the context manager itself.
 # Only one brackets is allowed around the
 # alias expression or comma-delimited context managers.
-with open("bla.txt"):
+with open( "bla.txt" ):
     pass
 
-with open("bla.txt"), open("bla.txt"):
+with open( "bla.txt" ), open( "bla.txt" ):
     pass
 
-with open("bla.txt") as f:
+with open( "bla.txt" ) as f:
     pass
 
-with open("bla.txt") as f:
+with open( "bla.txt" ) as f:
     pass
 
 with CtxManager1() as example1, CtxManager2() as example2:
     ...
 
 # regression tests for #3678
-with (a, *b):
+with ( a, *b ):
     pass
 
-with a, (b, *c):
+with a, ( b, *c ):
     pass
 
-with (a for b in c):
+with ( a for b in c ):
     pass
 
-with a, (b for c in d):
+with a, ( b for c in d ):
     pass

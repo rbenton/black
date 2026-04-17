@@ -11,7 +11,6 @@ class AnotherCase:
     """
 
 # output
-
 class Plotter:
 
     pass

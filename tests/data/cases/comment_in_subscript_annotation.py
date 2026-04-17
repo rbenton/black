@@ -11,7 +11,6 @@ def foo():
     ] = field( default_factory=list)
 
 # output
-
 # Regression test for https://github.com/psf/black/issues/4733.
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: list[  # bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     int
@@ -22,4 +21,4 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: list[  # bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 def foo():
     possibly_redundant_lowlevel_checkpoints: list[  # pyright: ignore[reportUnknownVariableType]
         cst.BaseExpression
-    ] = field(default_factory=list)
+    ] = field( default_factory=list)

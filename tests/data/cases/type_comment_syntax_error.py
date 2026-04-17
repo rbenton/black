@@ -3,7 +3,6 @@ def foo(
     x): pass
 
 # output
-
 def foo(
     # type: Foo
     x,

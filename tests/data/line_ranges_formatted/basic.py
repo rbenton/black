@@ -19,31 +19,31 @@ a   = [1, 2]  # fmt: skip
 class Foo:
     """Class doc."""
 
-    def __init__(self) -> None:
+    def __init__( self ) -> None:
         pass
 
     @add_logging
-    @memoize.memoize(max_items=2)
+    @memoize.memoize( max_items=2 )
     def plus_one(
         self,
         number: int,
     ) -> int:
         return number + 1
 
-    async def async_plus_one(self, number: int) -> int:
-        await asyncio.sleep(1)
+    async def async_plus_one( self, number: int ) -> int:
+        await asyncio.sleep( 1 )
         async with some_context():
             return number + 1
 
 
 try:
-    for i in range(10):
+    for i in range( 10 ):
         while condition:
             if something:
                 then_something()
             elif something_else:
                 then_something_else()
 except ValueError as e:
-    handle(e)
+    handle( e )
 finally:
     done()

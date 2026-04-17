@@ -12,8 +12,6 @@ async for (item) in async_iter:
 
 
 # output
-
-
 async def func() -> int:
     return 0
 

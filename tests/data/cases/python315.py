@@ -42,11 +42,11 @@ def eager():
     return lazy
 
 
-flattened = [*item for item in items]
-generator = (*item for item in items)
-combined = {*members for members in groups}
-merged = {**mapping for mapping in mappings}
+flattened = [ *item for item in items ]
+generator = ( *item for item in items )
+combined = { *members for members in groups }
+merged = { **mapping for mapping in mappings }
 
 
 async def collect():
-    return [*item async for item in items_async]
+    return [ *item async for item in items_async ]

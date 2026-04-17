@@ -13,7 +13,6 @@ def f(): pass
 def f(): pass
 
 # output
-
 # fmt: off
 @test([
     1, 2,

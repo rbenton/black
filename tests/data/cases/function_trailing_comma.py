@@ -119,14 +119,13 @@ variable: (
 )
 
 # output
-
 def f(
     a,
 ):
     d = {
         "key": "value",
     }
-    tup = (1,)
+    tup = ( 1, )
 
 
 def f2(
@@ -152,12 +151,12 @@ def f(
         }
     )
     call2(
-        arg=[1, 2, 3],
+        arg=[ 1, 2, 3 ],
     )
     x = {
         "a": 1,
         "b": 2,
-    }["a"]
+    }[ "a" ]
     if (
         a
         == {
@@ -169,13 +168,13 @@ def f(
             "f": 6,
             "g": 7,
             "h": 8,
-        }["a"]
+        }[ "a" ]
     ):
         pass
 
 
 def xxxxxxxxxxxxxxxxxxxxxxxxxxxx() -> (
-    Set["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
+    Set[ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ]
 ):
     json = {
         "k": {
@@ -220,7 +219,7 @@ def func() -> (
 
 # Make sure inner one-element tuple won't explode
 some_module.some_function(
-    argument1, (one_element_tuple,), argument4, argument5, argument6
+    argument1, ( one_element_tuple, ), argument4, argument5, argument6
 )
 
 # Inner trailing comma causes outer to explode
@@ -284,7 +283,7 @@ def foo(
     pass
 
 
-def foo(arg: int):  # only before
+def foo( arg: int ):  # only before
     pass
 
 

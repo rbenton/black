@@ -483,6 +483,10 @@ class Line:
         indent = "    " * self.depth
         leaves = iter(self.leaves)
         first = next(leaves)
+        if first.type in CLOSING_BRACKETS:
+            first.prefix = ""
+        elif first.prefix.startswith(" "):
+            first.prefix = first.prefix.lstrip(" ")
         res = f"{first.prefix}{indent}{first.value}"
         res += "".join(str(leaf) for leaf in leaves)
         comments_iter = itertools.chain.from_iterable(self.comments.values())

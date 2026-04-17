@@ -7,7 +7,6 @@ e = 5
 f = ["This is a very long line that should be formatted into a clearer line ", "by rearranging."]
 
 # output
-
 a = 3
 # fmt: off
 b,    c = 1, 2

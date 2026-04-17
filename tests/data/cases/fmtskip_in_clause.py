@@ -20,8 +20,6 @@ def test():
 
 
 # output
-
-
 # Single fmt: skip in multi-part if-clause
 class ClassWithALongName:
     Constant1 = 1

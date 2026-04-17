@@ -3,7 +3,6 @@ a =   2
 l = [1, 2, 3,]
 
 # output
-
 a = 2
 # fmt: skip
 l = [

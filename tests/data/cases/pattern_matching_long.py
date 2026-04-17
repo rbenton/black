@@ -8,7 +8,6 @@ match x:
         pass
 
 # output
-
 match x:
     case "abcd" | "abcd" | "abcd":
         pass

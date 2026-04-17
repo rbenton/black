@@ -8,7 +8,6 @@ with open   (
 ) as f:    content = f.read() # fmt: skip
 
 # output
-
 with open("file.txt") as f:    content = f.read() # fmt: skip
 
 # Ideally, only the last line would be ignored

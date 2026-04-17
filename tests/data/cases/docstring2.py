@@ -51,8 +51,6 @@ def single_quote_docstring_over_line_limit2():
 
 
 # output
-
-
 def docstring_almost_at_line_limit():
     """long docstring................................................................."""
 

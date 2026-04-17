@@ -90,11 +90,9 @@ def func():
     print()
 
 # output
-
-
 from middleman.authentication import validate_oauth_token
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger( __name__ )
 
 
 # case 2 comment after import
@@ -102,19 +100,19 @@ from middleman.authentication import validate_oauth_token
 
 # comment
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger( __name__ )
 
 
 # case 3 comment after import
 from middleman.authentication import validate_oauth_token
 
 # comment
-logger = logging.getLogger(__name__)
+logger = logging.getLogger( __name__ )
 
 
 from middleman.authentication import validate_oauth_token
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger( __name__ )
 
 
 # case 4 try catch with import after import
@@ -143,8 +141,8 @@ import os
 import os
 import os
 
-for i in range(10):
-    print(i)
+for i in range( 10 ):
+    print( i )
 
 
 # case 6 import in function

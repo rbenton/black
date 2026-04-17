@@ -145,7 +145,6 @@ square = Square(4) # type: Optional[Square]
 ]
 
 # output
-
 from .config import (
     Any,
     Bool,
@@ -197,9 +196,9 @@ def func():
         0.0789,
         0.0123,
         0.0789,
-        a[-1],  # type: ignore
+        a[ -1 ],  # type: ignore
     )
-    c = call(0.0123, 0.0456, 0.0789, 0.0123, 0.0789, a[-1])  # type: ignore
+    c = call( 0.0123, 0.0456, 0.0789, 0.0123, 0.0789, a[ -1 ] )  # type: ignore
     c = call(
         0.0123,
         0.0456,
@@ -210,7 +209,7 @@ def func():
         0.0123,
         0.0456,
         0.0789,
-        a[-1],  # type: ignore
+        a[ -1 ],  # type: ignore
     )
 
     # The type: ignore exception only applies to line length, not
@@ -233,7 +232,7 @@ def func():
 
 class C:
     @pytest.mark.parametrize(
-        ("post_data", "message"),
+        ( "post_data", "message" ),
         [
             # metadata_version errors.
             (
@@ -245,7 +244,7 @@ class C:
                 ),
             ),
             (
-                {"metadata_version": "-1"},
+                { "metadata_version": "-1" },
                 (
                     "'-1' is an invalid value for Metadata-Version. Error: Unknown"
                     " Metadata Version see"
@@ -254,14 +253,14 @@ class C:
             ),
             # name errors.
             (
-                {"metadata_version": "1.2"},
+                { "metadata_version": "1.2" },
                 (
                     "'' is an invalid value for Name. Error: This field is required."
                     " see https://packaging.python.org/specifications/core-metadata"
                 ),
             ),
             (
-                {"metadata_version": "1.2", "name": "foo-"},
+                { "metadata_version": "1.2", "name": "foo-" },
                 (
                     "'foo-' is an invalid value for Name. Error: Must start and end"
                     " with a letter or numeral and contain only ascii numeric and '.',"
@@ -271,14 +270,14 @@ class C:
             ),
             # version errors.
             (
-                {"metadata_version": "1.2", "name": "example"},
+                { "metadata_version": "1.2", "name": "example" },
                 (
                     "'' is an invalid value for Version. Error: This field is required."
                     " see https://packaging.python.org/specifications/core-metadata"
                 ),
             ),
             (
-                {"metadata_version": "1.2", "name": "example", "version": "dog"},
+                { "metadata_version": "1.2", "name": "example", "version": "dog" },
                 (
                     "'dog' is an invalid value for Version. Error: Must start and end"
                     " with a letter or numeral and contain only ascii numeric and '.',"
@@ -293,7 +292,7 @@ class C:
     ): ...
 
 
-square = Square(4)  # type: Optional[Square]
+square = Square( 4 )  # type: Optional[Square]
 
 # Regression test for https://github.com/psf/black/issues/3756.
 [

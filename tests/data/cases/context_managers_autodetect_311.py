@@ -18,8 +18,6 @@ with \
 
 
 # output
-
-
 # This file uses except* clause in Python 3.11.
 
 

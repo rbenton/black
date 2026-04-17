@@ -22,7 +22,6 @@ with (
     ...
 
 # output
-
 with CtxManager() as example:
     ...
 

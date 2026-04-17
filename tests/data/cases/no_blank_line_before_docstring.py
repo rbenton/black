@@ -33,8 +33,6 @@ class SingleQuotedDocstring:
     "I'm a docstring but I don't even get triple quotes."
 
 # output
-
-
 def line_before_docstring():
     """Please move me up"""
 
@@ -46,7 +44,7 @@ class LineBeforeDocstring:
 class EvenIfThereIsAMethodAfter:
     """I'm the docstring"""
 
-    def method(self):
+    def method( self ):
         pass
 
 

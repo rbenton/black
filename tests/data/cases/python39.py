@@ -11,8 +11,7 @@ def f():
     ...
 
 # output
-
-@relaxed_decorator[0]
+@relaxed_decorator[ 0 ]
 def f(): ...
 
 

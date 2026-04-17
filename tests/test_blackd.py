@@ -44,10 +44,10 @@ class BlackDTestCase(AioHTTPTestCase):
         response = await self.client.post("/", data=b"print('hello world')")
         self.assertEqual(response.status, 200)
         self.assertEqual(response.charset, "utf8")
-        self.assertEqual(await response.read(), b'print("hello world")\n')
+        self.assertEqual(await response.read(), b'print( "hello world" )\n')
 
     async def test_blackd_request_no_change(self) -> None:
-        response = await self.client.post("/", data=b'print("hello world")\n')
+        response = await self.client.post("/", data=b'print( "hello world" )\n')
         self.assertEqual(response.status, 204)
         self.assertEqual(await response.read(), b"")
 
@@ -166,7 +166,7 @@ class BlackDTestCase(AioHTTPTestCase):
 
     async def test_blackd_skip_first_source_line(self) -> None:
         invalid_first_line = b"Header will be skipped\r\ni = [1,2,3]\nj = [1,2,3]\n"
-        expected_result = b"Header will be skipped\r\ni = [1, 2, 3]\nj = [1, 2, 3]\n"
+        expected_result = b"Header will be skipped\r\ni = [ 1, 2, 3 ]\nj = [ 1, 2, 3 ]\n"
         response = await self.client.post("/", data=invalid_first_line)
         self.assertEqual(response.status, 400)
         response = await self.client.post(
@@ -179,7 +179,7 @@ class BlackDTestCase(AioHTTPTestCase):
 
     async def test_blackd_preview(self) -> None:
         response = await self.client.post(
-            "/", data=b'print("hello")\n', headers={blackd.PREVIEW: "true"}
+            "/", data=b'print( "hello" )\n', headers={blackd.PREVIEW: "true"}
         )
         self.assertEqual(response.status, 204)
 
@@ -351,15 +351,15 @@ class BlackDClientTestCase(AioHTTPTestCase):
     async def test_unformatted_code(self) -> None:
         client = blackd.client.BlackDClient(self.client.make_url("/"))
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)
 
     async def test_formatted_code(self) -> None:
         client = blackd.client.BlackDClient(self.client.make_url("/"))
-        initial_code = 'def hello():\n    print("Hello, World!")\n'
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        initial_code = 'def hello():\n    print( "Hello, World!" )\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(initial_code)
 
         self.assertEqual(formatted_code, expected)
@@ -377,7 +377,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
             self.client.make_url("/"), skip_source_first_line=True
         )
         invalid_first_line = "Header will be skipped\r\ni = [1,2,3]\nj = [1,2,3]\n"
-        expected_result = "Header will be skipped\r\ni = [1, 2, 3]\nj = [1, 2, 3]\n"
+        expected_result = "Header will be skipped\r\ni = [ 1, 2, 3 ]\nj = [ 1, 2, 3 ]\n"
         formatted_code = await client.format_code(invalid_first_line)
 
         self.assertEqual(formatted_code, expected_result)
@@ -387,7 +387,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
             self.client.make_url("/"), skip_string_normalization=True
         )
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = "def hello():\n    print('Hello, World!')\n"
+        expected = "def hello():\n    print( 'Hello, World!' )\n"
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)
@@ -397,7 +397,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
             self.client.make_url("/"), skip_magic_trailing_comma=True
         )
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)
@@ -405,7 +405,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
     async def test_preview(self) -> None:
         client = blackd.client.BlackDClient(self.client.make_url("/"), preview=True)
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)
@@ -413,7 +413,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
     async def test_fast(self) -> None:
         client = blackd.client.BlackDClient(self.client.make_url("/"), fast=True)
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)
@@ -423,7 +423,7 @@ class BlackDClientTestCase(AioHTTPTestCase):
             self.client.make_url("/"), python_variant="3.6"
         )
         unformatted_code = "def hello(): print('Hello, World!')"
-        expected = 'def hello():\n    print("Hello, World!")\n'
+        expected = 'def hello():\n    print( "Hello, World!" )\n'
         formatted_code = await client.format_code(unformatted_code)
 
         self.assertEqual(formatted_code, expected)

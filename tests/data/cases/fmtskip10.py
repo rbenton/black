@@ -13,9 +13,9 @@ b = [c for c in "A very long string that would normally generate some kind of co
 
 v = (
     foo_dict  # fmt: skip
-    .setdefault("a", {})
-    .setdefault("b", {})
-    .setdefault("c", {})
-    .setdefault("d", {})
-    .setdefault("e", {})
+    .setdefault( "a", {} )
+    .setdefault( "b", {} )
+    .setdefault( "c", {} )
+    .setdefault( "d", {} )
+    .setdefault( "e", {} )
 )

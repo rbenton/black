@@ -9,8 +9,6 @@ if True:
 
 
 # output
-
-
 if True:
     if True:
         if True:
@@ -18,4 +16,7 @@ if True:
                 "qweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweas "
                 + "qweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqwegqweasdzxcqweasdzxc.",
                 "qweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqweasdzxcqwe",
-            ) % {"reported_username": reported_username, "report_reason": report_reason}
+            ) % {
+                "reported_username": reported_username,
+                "report_reason": report_reason,
+            }

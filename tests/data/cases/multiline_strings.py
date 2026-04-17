@@ -231,99 +231,98 @@ a = b if """
 """ else c
 
 # output
-
 """cow
 say""",
 call(
     3,
     "dogsay",
-    textwrap.dedent("""dove
-    coo""" % "cowabunga"),
+    textwrap.dedent( """dove
+    coo""" % "cowabunga" ),
 )
 call(
     3,
     "dogsay",
-    textwrap.dedent("""dove
-coo""" % "cowabunga"),
+    textwrap.dedent( """dove
+coo""" % "cowabunga" ),
 )
 call(
     3,
-    textwrap.dedent("""cow
-    moo""" % "cowabunga"),
+    textwrap.dedent( """cow
+    moo""" % "cowabunga" ),
     "dogsay",
 )
 call(
     3,
     "dogsay",
-    textwrap.dedent("""crow
-    caw""" % "cowabunga"),
+    textwrap.dedent( """crow
+    caw""" % "cowabunga" ),
 )
 call(
     3,
-    textwrap.dedent("""cat
-    meow""" % "cowabunga"),
-    {"dog", "say"},
+    textwrap.dedent( """cat
+    meow""" % "cowabunga" ),
+    { "dog", "say" },
 )
 call(
     3,
-    {"dog", "say"},
-    textwrap.dedent("""horse
-    neigh""" % "cowabunga"),
+    { "dog", "say" },
+    textwrap.dedent( """horse
+    neigh""" % "cowabunga" ),
 )
 call(
     3,
-    {"dog", "say"},
-    textwrap.dedent("""pig
-    oink""" % "cowabunga"),
+    { "dog", "say" },
+    textwrap.dedent( """pig
+    oink""" % "cowabunga" ),
 )
-textwrap.dedent("""A one-line triple-quoted string.""")
-textwrap.dedent("""A two-line triple-quoted string
-since it goes to the next line.""")
-textwrap.dedent("""A three-line triple-quoted string
+textwrap.dedent( """A one-line triple-quoted string.""" )
+textwrap.dedent( """A two-line triple-quoted string
+since it goes to the next line.""" )
+textwrap.dedent( """A three-line triple-quoted string
 that not only goes to the next line
-but also goes one line beyond.""")
-textwrap.dedent("""\
+but also goes one line beyond.""" )
+textwrap.dedent( """\
     A triple-quoted string
     actually leveraging the textwrap.dedent functionality
     that ends in a trailing newline,
     representing e.g. file contents.
-""")
-path.write_text(textwrap.dedent("""\
+""" )
+path.write_text( textwrap.dedent( """\
     A triple-quoted string
     actually leveraging the textwrap.dedent functionality
     that ends in a trailing newline,
     representing e.g. file contents.
-"""))
-path.write_text(textwrap.dedent("""\
+""" ) )
+path.write_text( textwrap.dedent( """\
     A triple-quoted string
     actually leveraging the textwrap.dedent functionality
     that ends in a trailing newline,
     representing e.g. {config_filename} file contents.
-""".format("config_filename", config_filename)))
+""".format( "config_filename", config_filename ) ) )
 # Another use case
-data = yaml.load("""\
+data = yaml.load( """\
 a: 1
 b: 2
-""")
+""" )
 data = yaml.load(
     """\
 a: 1
 b: 2
 """,
 )
-data = yaml.load("""\
+data = yaml.load( """\
     a: 1
     b: 2
-""")
+""" )
 
 MULTILINE = """
 foo
-""".replace("\n", "")
+""".replace( "\n", "" )
 generated_readme = lambda project_name: """
 {}
 
 <Add content here!>
-""".strip().format(project_name)
+""".strip().format( project_name )
 parser.usage += """
 Custom extra help summary.
 
@@ -333,7 +332,7 @@ Extra test:
 """
 
 
-def get_stuff(cr, value):
+def get_stuff( cr, value ):
     # original
     cr.execute(
         """
@@ -341,12 +340,12 @@ def get_stuff(cr, value):
           FROM some_table t
          WHERE id = %s
     """,
-        [value],
+        [ value ],
     )
     return cr.fetchone()
 
 
-def get_stuff(cr, value):
+def get_stuff( cr, value ):
     # preferred
     cr.execute(
         """
@@ -354,7 +353,7 @@ def get_stuff(cr, value):
           FROM some_table t
          WHERE id = %s
         """,
-        [value],
+        [ value ],
     )
     return cr.fetchone()
 
@@ -389,17 +388,17 @@ dis_c_instance_method = """\
               8 STORE_ATTR               0 (x)
              10 LOAD_CONST               0 (None)
              12 RETURN_VALUE
-""" % (_C.__init__.__code__.co_firstlineno + 1,)
-path.write_text(textwrap.dedent("""\
+""" % ( _C.__init__.__code__.co_firstlineno + 1, )
+path.write_text( textwrap.dedent( """\
     A triple-quoted string
     actually {verb} the textwrap.dedent functionality
     that ends in a trailing newline,
     representing e.g. {file_type} file contents.
-""".format(verb="using", file_type="test")))
-{"""cow
-moos"""}
-["""cow
-moos"""]
+""".format( verb="using", file_type="test" ) ) )
+{ """cow
+moos""" }
+[ """cow
+moos""" ]
 [
     """cow
 moos""",
@@ -411,22 +410,22 @@ barks""",
 
 
 def dastardly_default_value(
-    cow: String = json.loads("""this
+    cow: String = json.loads( """this
 is
 quite
 the
 dastadardly
-value!"""),
+value!""" ),
     **kwargs,
 ):
     pass
 
 
-print(f"""
+print( f"""
     This {animal}
     moos and barks
 {animal} say
-""")
+""" )
 msg = f"""The arguments {bad_arguments} were passed in.
 Please use `--build-option` instead,
 `--global-option` is reserved to flags like `--verbose` or `--quiet`.

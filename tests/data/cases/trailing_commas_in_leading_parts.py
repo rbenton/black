@@ -34,8 +34,6 @@ assert xxxxxxxxx.xxxxxxxxx.xxxxxxxxx(
 
 
 # output
-
-
 zero(
     one,
 ).two(
@@ -44,14 +42,14 @@ zero(
     five,
 )
 
-func1(arg1).func2(
+func1( arg1 ).func2(
     arg2,
-).func3(arg3).func4(
+).func3( arg3 ).func4(
     arg4,
-).func5(arg5)
+).func5( arg5 )
 
 # Inner one-element tuple shouldn't explode
-func1(arg1).func2(arg1, (one_tuple,)).func3(arg3)
+func1( arg1 ).func2( arg1, ( one_tuple, ) ).func3( arg3 )
 
 (
     a,
@@ -60,24 +58,24 @@ func1(arg1).func2(arg1, (one_tuple,)).func3(arg3)
     d,
 ) = func1(
     arg1
-) and func2(arg2)
+) and func2( arg2 )
 
 
 # Example from https://github.com/psf/black/issues/3229
-def refresh_token(self, device_family, refresh_token, api_key):
+def refresh_token( self, device_family, refresh_token, api_key ):
     return self.orchestration.refresh_token(
         data={
             "refreshToken": refresh_token,
         },
         api_key=api_key,
-    )["extensions"]["sdk"]["token"]
+    )[ "extensions"][ "sdk"][ "token" ]
 
 
 # Edge case where a bug in a working-in-progress version of
 # https://github.com/psf/black/pull/3370 causes an infinite recursion.
 assert (
     long_module.long_class.long_func().another_func()
-    == long_module.long_class.long_func()["some_key"].another_func(arg1)
+    == long_module.long_class.long_func()[ "some_key" ].another_func( arg1 )
 )
 
 # Regression test for https://github.com/psf/black/issues/3414.

@@ -167,8 +167,6 @@ instruction()#comment with bad spacing
 
 
 # output
-
-
 from com.my_lovely_company.my_lovely_team.my_lovely_project.my_lovely_component import (
     MyLovelyCompanyTeamProjectComponent,  # NOT DRY
 )
@@ -215,35 +213,35 @@ not_shareables = [
     "spam",
     # user-defined types and objects
     Cheese,
-    Cheese("Wensleydale"),
-    SubBytes(b"spam"),
+    Cheese( "Wensleydale" ),
+    SubBytes( b"spam" ),
 ]
 
 if "PYTHON" in os.environ:
-    add_compiler(compiler_from_env())
+    add_compiler( compiler_from_env() )
 else:
     # for compiler in compilers.values():
     # add_compiler(compiler)
-    add_compiler(compilers[(7.0, 32)])
+    add_compiler( compilers[ ( 7.0, 32 ) ] )
     # add_compiler(compilers[(7.1, 64)])
 
 
 # Comment before function.
 def inline_comments_in_brackets_ruin_everything():
     if typedargslist:
-        parameters.children = [children[0], body, children[-1]]  # (1  # )1
+        parameters.children = [ children[ 0 ], body, children[ -1 ] ]  # (1  # )1
         parameters.children = [
-            children[0],
+            children[ 0 ],
             body,
-            children[-1],  # type: ignore
+            children[ -1 ],  # type: ignore
         ]
     else:
         parameters.children = [
-            parameters.children[0],  # (2 what if this was actually long
+            parameters.children[ 0 ],  # (2 what if this was actually long
             body,
-            parameters.children[-1],  # )2
+            parameters.children[ -1 ],  # )2
         ]
-        parameters.children = [parameters.what_if_this_was_actually_long.children[0], body, parameters.children[-1]]  # type: ignore
+        parameters.children = [ parameters.what_if_this_was_actually_long.children[ 0 ], body, parameters.children[ -1 ] ]  # type: ignore
     if (
         self._proc is not None
         # has the child process finished?
@@ -298,7 +296,7 @@ short
     ]
     lcomp3 = [
         # This one is actually too long to fit in a single line.
-        element.split("\n", 1)[0]
+        element.split( "\n", 1 )[ 0 ]
         # yup
         for element in collection.select_elements()
         # right
@@ -314,7 +312,7 @@ short
     # let's return
     return Node(
         syms.simple_stmt,
-        [Node(statement, result), Leaf(token.NEWLINE, "\n")],  # FIXME: \r\n?
+        [ Node( statement, result ), Leaf( token.NEWLINE, "\n" ) ],  # FIXME: \r\n?
     )
 
 
@@ -328,7 +326,7 @@ CONFIG_FILES = (
 
 
 class Test:
-    def _init_host(self, parsed) -> None:
+    def _init_host( self, parsed ) -> None:
         if parsed.hostname is None or not parsed.hostname.strip():  # type: ignore
             pass
 

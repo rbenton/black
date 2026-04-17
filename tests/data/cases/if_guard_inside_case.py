@@ -26,15 +26,13 @@ def f(x):
 
 
 # output
-
-
-def f(x):
+def f( x ):
     match x:
         # good refactor
-        case [y] if y == 123:
+        case [ y ] if y == 123:
             pass
 
-        case [y] if True:
+        case [ y ] if True:
             pass
 
         case [

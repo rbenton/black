@@ -129,7 +129,7 @@ BRACKET: Final = {
 OPENING_BRACKETS: Final = set(BRACKET.keys())
 CLOSING_BRACKETS: Final = set(BRACKET.values())
 BRACKETS: Final = OPENING_BRACKETS | CLOSING_BRACKETS
-ALWAYS_NO_SPACE: Final = CLOSING_BRACKETS | {
+ALWAYS_NO_SPACE: Final = {
     token.COMMA,
     STANDALONE_COMMENT,
     token.FSTRING_MIDDLE,
@@ -212,8 +212,11 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
     prev = leaf.prev_sibling
     if not prev:
         prevp = preceding_leaf(p)
-        if not prevp or prevp.type in OPENING_BRACKETS:
+        if not prevp:
             return NO
+
+        if prevp.type in OPENING_BRACKETS:
+            return SPACE if prevp.value and t not in CLOSING_BRACKETS else NO
 
         if t == token.COLON:
             if prevp.type == token.COLON:
@@ -268,13 +271,15 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
             return NO
 
     elif prev.type in OPENING_BRACKETS:
-        return NO
+        return SPACE if prev.value and t not in CLOSING_BRACKETS else NO
 
     elif prev.type == token.BANG:
         return NO
 
     if p.type in {syms.parameters, syms.arglist}:
         # untyped function signatures or calls
+        if t in CLOSING_BRACKETS and prev:
+            return SPACE
         if not prev or prev.type != token.COMMA:
             return NO
 
@@ -309,8 +314,11 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
 
     elif p.type == syms.trailer:
         # attributes and calls
-        if t == token.LPAR or t == token.RPAR:
+        if t == token.LPAR:
             return NO
+
+        if t in CLOSING_BRACKETS and prev:
+            return SPACE
 
         if not prev:
             if t == token.DOT or t == token.LSQB:
@@ -334,7 +342,7 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
 
     elif p.type == syms.decorator:
         # decorators
-        return NO
+        return SPACE if t == token.RPAR else NO
 
     elif p.type == syms.dotted_name:
         if prev:
@@ -424,6 +432,9 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
         if prevp and prevp.type == token.DOUBLESTAR:
             if prevp.parent and is_simple_exponentiation(prevp.parent):
                 return NO
+
+    if t in CLOSING_BRACKETS and not v:
+        return NO
 
     return SPACE
 
