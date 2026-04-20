@@ -166,7 +166,9 @@ class BlackDTestCase(AioHTTPTestCase):
 
     async def test_blackd_skip_first_source_line(self) -> None:
         invalid_first_line = b"Header will be skipped\r\ni = [1,2,3]\nj = [1,2,3]\n"
-        expected_result = b"Header will be skipped\r\ni = [ 1, 2, 3 ]\nj = [ 1, 2, 3 ]\n"
+        expected_result = (
+            b"Header will be skipped\r\ni = [ 1, 2, 3 ]\nj = [ 1, 2, 3 ]\n"
+        )
         response = await self.client.post("/", data=invalid_first_line)
         self.assertEqual(response.status, 400)
         response = await self.client.post(

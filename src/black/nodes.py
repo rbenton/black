@@ -271,7 +271,11 @@ def whitespace(leaf: Leaf, *, complex_subscript: bool, mode: Mode) -> str:
             return NO
 
     elif prev.type in OPENING_BRACKETS:
-        return SPACE if prev.value and t not in CLOSING_BRACKETS else NO
+        return (
+            SPACE
+            if isinstance(prev, Leaf) and prev.value and t not in CLOSING_BRACKETS
+            else NO
+        )
 
     elif prev.type == token.BANG:
         return NO

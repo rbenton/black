@@ -3040,7 +3040,8 @@ class TestDeFactoAPI:
     def test_format_str(self) -> None:
         # format_str and Mode should keep working
         assert (
-            black.format_str("print('hello')", mode=black.Mode()) == 'print( "hello" )\n'
+            black.format_str("print('hello')", mode=black.Mode())
+            == 'print( "hello" )\n'
         )
 
         # you can pass line length

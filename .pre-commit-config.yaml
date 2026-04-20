@@ -42,7 +42,7 @@ repos:
     rev: v1.19.1
     hooks:
       - id: mypy
-        exclude: ^docs/conf.py$
+        exclude: ^(docs/conf\.py|_black_version\.py)$
         args: []
         additional_dependencies:
           # Click is intentionally out-of-sync with pyproject.toml
