@@ -7,8 +7,8 @@ from pathlib import Path
 # Make sure we use the local black
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-import black
-from tests.util import DATA_DIR, parse_mode
+import black  # noqa: E402
+from tests.util import DATA_DIR, parse_mode  # noqa: E402
 
 EMPTY_LINE = "# EMPTY LINE WITH WHITESPACE" + " (this comment will be removed)"
 
@@ -105,7 +105,9 @@ def main() -> None:
                 print(f"  ERROR: {subdir}/{f.name}: {e}")
                 total_errors += 1
     unchanged = total_files - total_changed - total_errors
-    print(f"\n{total_changed} files updated, {total_errors} errors, {unchanged} unchanged")
+    print(
+        f"\n{total_changed} files updated, {total_errors} errors, {unchanged} unchanged"
+    )
 
 
 if __name__ == "__main__":

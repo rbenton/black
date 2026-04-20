@@ -42,7 +42,7 @@ repos:
     rev: v1.20.2
     hooks:
       - id: mypy
-        exclude: ^docs/conf.py$
+        exclude: ^(docs/conf\.py|_black_version\.py)$
         args: []
         additional_dependencies:
           - click>=8.0.0
