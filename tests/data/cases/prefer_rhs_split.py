@@ -15,7 +15,7 @@ first_item, second_item = (
     some_looooooooong_module.SomeClass.some_looooooooooooooong_variable_name
 )
 
-some_dict[ "with_a_long_key"] = (
+some_dict[ "with_a_long_key" ] = (
     some_looooooooong_module.SomeClass.some_looooooooooooooong_variable_name
 )
 
@@ -58,7 +58,7 @@ first_item, second_item = some_looooooooong_module.some_loooooog_function_name(
 # Make sure unsplittable type ignore won't be moved.
 some_kind_of_table[ some_key ] = util.some_function(  # type: ignore  # noqa: E501
     some_arg
-).intersection( pk_cols)
+).intersection( pk_cols )
 
 some_kind_of_table[
     some_key

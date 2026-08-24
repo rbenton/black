@@ -68,7 +68,7 @@ def refresh_token( self, device_family, refresh_token, api_key ):
             "refreshToken": refresh_token,
         },
         api_key=api_key,
-    )[ "extensions"][ "sdk"][ "token" ]
+    )[ "extensions" ][ "sdk" ][ "token" ]
 
 
 # Edge case where a bug in a working-in-progress version of

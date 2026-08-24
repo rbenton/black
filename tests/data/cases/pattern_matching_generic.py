@@ -61,7 +61,7 @@ def get_grammars( target_versions: Set[ TargetVersion ] ) -> List[ Grammar ]:
     # If we have to parse both, try to parse async as a keyword first
     if not supports_feature(
         target_versions, Feature.ASYNC_IDENTIFIERS
-    ) and not supports_feature( target_versions, Feature.PATTERN_MATCHING):
+    ) and not supports_feature( target_versions, Feature.PATTERN_MATCHING ):
         # Python 3.7-3.9
         grammars.append(
             pygram.python_grammar_no_print_statement_no_exec_statement_async_keywords

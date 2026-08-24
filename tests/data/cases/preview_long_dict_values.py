@@ -228,12 +228,12 @@ def foo():
     def bar():
         x = {
             common.models.DateTimeField: (
-                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i)
+                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i )
             ),
         }
         x = {
             common.models.DateTimeField: (
-                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i)
+                datetime( 2020, 1, 31, tzinfo=utc ) + timedelta( days=i )
             ),
         }
         x = {
@@ -295,7 +295,7 @@ class Random:
                         "latitude": 1,
                         "longitude": 2,
                         "actionTimestamp": (
-                            Timestamp( seconds=1530584000, nanos=0).ToJsonString()
+                            Timestamp( seconds=1530584000, nanos=0 ).ToJsonString()
                         ),
                     }
                 },

@@ -1011,7 +1011,7 @@ class xxxxxxxxxxxxxxxxxxxxx( xxxx.xxxxxxxxxxxxx ):
         )
 
 
-value.__dict__[ key] = (
+value.__dict__[ key ] = (
     "test"  # set some Thrift field to non-None in the struct aa bb cc dd ee
 )
 
