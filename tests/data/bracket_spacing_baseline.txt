@@ -1,0 +1,305 @@
+cases/expression.py:
+  line 154: '[' followed by 0 spaces, expected 1
+cases/fmtonoff.py:
+  line 9: '(' followed by 0 spaces, expected 1
+  line 10: ')' preceded by 0 spaces, expected 1
+  line 23: '(' followed by 0 spaces, expected 1
+  line 23: ')' preceded by 0 spaces, expected 1
+  line 24: '(' followed by 0 spaces, expected 1
+  line 24: ')' preceded by 0 spaces, expected 1
+  line 26: '(' followed by 0 spaces, expected 1
+  line 26: ')' preceded by 0 spaces, expected 1
+  line 28: '(' followed by 0 spaces, expected 1
+  line 28: ')' preceded by 0 spaces, expected 1
+  line 31: '(' followed by 0 spaces, expected 1
+  line 31: ')' preceded by 0 spaces, expected 1
+  line 32: '(' followed by 0 spaces, expected 1
+  line 32: ')' preceded by 0 spaces, expected 1
+  line 36: '[' followed by 0 spaces, expected 1
+  line 36: ']' preceded by 0 spaces, expected 1
+  line 38: '(' followed by 0 spaces, expected 1
+  line 38: ')' preceded by 0 spaces, expected 1
+  line 39: '[' followed by 0 spaces, expected 1
+  line 39: ']' preceded by 0 spaces, expected 1
+  line 106: '(' followed by 0 spaces, expected 1
+  line 106: ')' preceded by 0 spaces, expected 1
+  line 107: '(' followed by 0 spaces, expected 1
+  line 108: ')' preceded by 0 spaces, expected 1
+  line 109: '(' followed by 0 spaces, expected 1
+  line 109: ')' preceded by 0 spaces, expected 1
+  line 274: '[' followed by 0 spaces, expected 1
+  line 274: ']' preceded by 0 spaces, expected 1
+  line 275: '{' followed by 0 spaces, expected 1
+  line 276: '}' preceded by 0 spaces, expected 1
+cases/fmtonoff2.py:
+  line 11: '(' followed by 0 spaces, expected 1
+  line 15: '(' followed by 0 spaces, expected 1
+  line 15: ')' preceded by 0 spaces, expected 1
+  line 17: ')' preceded by 0 spaces, expected 1
+  line 18: '(' followed by 0 spaces, expected 1
+  line 18: ')' preceded by 0 spaces, expected 1
+  line 21: '(' followed by 0 spaces, expected 1
+  line 21: ')' preceded by 0 spaces, expected 1
+  line 25: '(' followed by 0 spaces, expected 1
+  line 25: ')' preceded by 0 spaces, expected 1
+  line 29: '(' followed by 0 spaces, expected 1
+  line 29: ')' preceded by 0 spaces, expected 1
+  line 36: '(' followed by 0 spaces, expected 1
+  line 36: ')' preceded by 0 spaces, expected 1
+  line 37: '(' followed by 0 spaces, expected 1
+  line 37: ')' preceded by 0 spaces, expected 1
+cases/fmtonoff4.py:
+  line 2: '(' followed by 0 spaces, expected 1
+  line 5: ')' preceded by 0 spaces, expected 1
+cases/fmtonoff5.py:
+  line 30: '(' followed by 2 spaces, expected 1
+  line 30: ')' preceded by 2 spaces, expected 1
+  line 55: '[' followed by 0 spaces, expected 1
+  line 55: ']' preceded by 0 spaces, expected 1
+  line 61: '[' followed by 0 spaces, expected 1
+  line 61: ']' preceded by 0 spaces, expected 1
+  line 61: '(' followed by 0 spaces, expected 1
+  line 61: ')' preceded by 0 spaces, expected 1
+cases/fmtskip10.py:
+  line 2: '(' followed by 0 spaces, expected 1
+  line 2: ')' preceded by 0 spaces, expected 1
+  line 3: '(' followed by 0 spaces, expected 1
+  line 3: ')' preceded by 0 spaces, expected 1
+  line 3: '(' followed by 0 spaces, expected 1
+  line 3: ')' preceded by 0 spaces, expected 1
+  line 4: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 4: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 5: '(' followed by 0 spaces, expected 1
+  line 5: ')' preceded by 0 spaces, expected 1
+  line 6: '[' followed by 0 spaces, expected 1
+  line 6: ']' preceded by 0 spaces, expected 1
+  line 6: '(' followed by 0 spaces, expected 1
+  line 6: ')' preceded by 0 spaces, expected 1
+  line 6: '(' followed by 0 spaces, expected 1
+  line 6: ')' preceded by 0 spaces, expected 1
+  line 7: '(' followed by 0 spaces, expected 1
+  line 7: ')' preceded by 0 spaces, expected 1
+  line 12: '[' followed by 0 spaces, expected 1
+  line 12: ']' preceded by 0 spaces, expected 1
+cases/fmtskip11.py:
+  line 49: '(' followed by 0 spaces, expected 1
+  line 50: ')' preceded by 0 spaces, expected 1
+  line 58: '(' followed by 0 spaces, expected 1
+  line 59: ')' preceded by 0 spaces, expected 1
+  line 68: '(' followed by 0 spaces, expected 1
+  line 69: ')' preceded by 0 spaces, expected 1
+  line 78: '(' followed by 0 spaces, expected 1
+  line 79: ')' preceded by 0 spaces, expected 1
+cases/fmtskip12.py:
+  line 1: '(' followed by 0 spaces, expected 1
+  line 1: ')' preceded by 0 spaces, expected 1
+cases/fmtskip13.py:
+  line 2: '{' followed by 0 spaces, expected 1
+  line 2: '}' preceded by 0 spaces, expected 1
+  line 17: '{' followed by 0 spaces, expected 1
+  line 17: '}' preceded by 0 spaces, expected 1
+cases/fmtskip2.py:
+  line 7: '[' followed by 0 spaces, expected 1
+  line 7: ']' preceded by 0 spaces, expected 1
+cases/fmtskip8.py:
+  line 2: '(' followed by 2 spaces, expected 1
+  line 2: ')' preceded by 2 spaces, expected 1
+  line 9: '(' followed by 2 spaces, expected 1
+  line 9: ')' preceded by 0 spaces, expected 1
+  line 15: '(' followed by 2 spaces, expected 1
+  line 15: ')' preceded by 2 spaces, expected 1
+  line 16: '(' followed by 2 spaces, expected 1
+  line 16: ')' preceded by 2 spaces, expected 1
+  line 20: '(' followed by 2 spaces, expected 1
+  line 20: ')' preceded by 2 spaces, expected 1
+  line 26: '(' followed by 2 spaces, expected 1
+  line 26: ')' preceded by 2 spaces, expected 1
+  line 29: '(' followed by 2 spaces, expected 1
+  line 29: ')' preceded by 2 spaces, expected 1
+  line 35: '(' followed by 2 spaces, expected 1
+  line 35: ')' preceded by 2 spaces, expected 1
+  line 39: '(' followed by 2 spaces, expected 1
+  line 39: ')' preceded by 2 spaces, expected 1
+  line 44: '(' followed by 2 spaces, expected 1
+  line 44: ')' preceded by 2 spaces, expected 1
+  line 56: '(' followed by 2 spaces, expected 1
+  line 56: ')' preceded by 2 spaces, expected 1
+  line 61: '(' followed by 2 spaces, expected 1
+  line 61: ')' preceded by 2 spaces, expected 1
+cases/fmtskip_class_header.py:
+  line 1: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 8: '(' followed by 0 spaces, expected 1
+  line 10: ')' preceded by 0 spaces, expected 1
+  line 31: '(' followed by 2 spaces, expected 1
+  line 31: ')' preceded by 2 spaces, expected 1
+  line 32: '(' followed by 2 spaces, expected 1
+  line 32: ')' preceded by 2 spaces, expected 1
+  line 37: '(' followed by 0 spaces, expected 1
+  line 37: ')' preceded by 0 spaces, expected 1
+  line 38: '(' followed by 0 spaces, expected 1
+  line 38: ')' preceded by 0 spaces, expected 1
+cases/fmtskip_multiple_strings.py:
+  line 32: '[' followed by 0 spaces, expected 1
+  line 32: '{' followed by 0 spaces, expected 1
+  line 32: '[' followed by 0 spaces, expected 1
+  line 32: ']' preceded by 0 spaces, expected 1
+  line 32: '}' preceded by 0 spaces, expected 1
+  line 32: ']' preceded by 0 spaces, expected 1
+  line 33: '[' followed by 0 spaces, expected 1
+  line 33: '{' followed by 0 spaces, expected 1
+  line 33: '[' followed by 0 spaces, expected 1
+  line 33: ']' preceded by 0 spaces, expected 1
+  line 33: '}' preceded by 0 spaces, expected 1
+  line 33: ']' preceded by 0 spaces, expected 1
+  line 34: '[' followed by 0 spaces, expected 1
+  line 34: '{' followed by 0 spaces, expected 1
+  line 34: '[' followed by 0 spaces, expected 1
+  line 34: ']' preceded by 0 spaces, expected 1
+  line 34: '}' preceded by 0 spaces, expected 1
+  line 34: ']' preceded by 0 spaces, expected 1
+cases/line_ranges_basic.py:
+  line 4: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 29: '(' followed by 0 spaces, expected 1
+  line 29: ')' preceded by 0 spaces, expected 1
+  line 41: '(' followed by 2 spaces, expected 1
+  line 41: ')' preceded by 0 spaces, expected 1
+  line 44: '(' followed by 2 spaces, expected 1
+  line 44: ')' preceded by 0 spaces, expected 1
+  line 48: '(' followed by 0 spaces, expected 1
+  line 48: ')' preceded by 0 spaces, expected 1
+  line 51: empty pair () has a space
+  line 53: empty pair () has a space
+  line 55: empty pair () has a space
+  line 57: empty pair () has a space
+  line 59: empty pair () has a space
+  line 60: '(' followed by 2 spaces, expected 1
+  line 60: ')' preceded by 2 spaces, expected 1
+  line 62: '(' followed by 2 spaces, expected 1
+  line 62: ')' preceded by 2 spaces, expected 1
+  line 63: '(' followed by 2 spaces, expected 1
+  line 63: ')' preceded by 2 spaces, expected 1
+cases/line_ranges_exceeding_end.py:
+  line 4: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 5: '(' followed by 0 spaces, expected 1
+  line 5: ')' preceded by 0 spaces, expected 1
+cases/line_ranges_fmt_off.py:
+  line 7: empty pair () has a space
+  line 12: empty pair () has a space
+  line 13: '(' followed by 2 spaces, expected 1
+  line 13: '{' followed by 0 spaces, expected 1
+  line 13: '}' preceded by 0 spaces, expected 1
+  line 13: ')' preceded by 2 spaces, expected 1
+  line 15: empty pair () has a space
+  line 16: '(' followed by 2 spaces, expected 1
+  line 16: '{' followed by 0 spaces, expected 1
+  line 16: '}' preceded by 0 spaces, expected 1
+  line 16: ')' preceded by 2 spaces, expected 1
+  line 17: empty pair () has a space
+  line 18: '(' followed by 2 spaces, expected 1
+  line 18: '{' followed by 0 spaces, expected 1
+  line 18: '}' preceded by 0 spaces, expected 1
+  line 18: ')' preceded by 2 spaces, expected 1
+cases/line_ranges_fmt_off_decorator.py:
+  line 9: empty pair () has a space
+  line 17: '(' followed by 0 spaces, expected 1
+  line 17: ')' preceded by 0 spaces, expected 1
+cases/line_ranges_fmt_off_overlap.py:
+  line 6: empty pair () has a space
+  line 7: '(' followed by 2 spaces, expected 1
+  line 7: '{' followed by 0 spaces, expected 1
+  line 7: '}' preceded by 0 spaces, expected 1
+  line 7: ')' preceded by 2 spaces, expected 1
+  line 9: empty pair () has a space
+  line 10: '(' followed by 2 spaces, expected 1
+  line 10: '{' followed by 0 spaces, expected 1
+  line 10: '}' preceded by 0 spaces, expected 1
+  line 10: ')' preceded by 2 spaces, expected 1
+  line 11: empty pair () has a space
+  line 12: '(' followed by 2 spaces, expected 1
+  line 12: '{' followed by 0 spaces, expected 1
+  line 12: '}' preceded by 0 spaces, expected 1
+  line 12: ')' preceded by 2 spaces, expected 1
+cases/line_ranges_indentation.py:
+  line 12: '(' followed by 0 spaces, expected 1
+  line 12: ')' preceded by 0 spaces, expected 1
+cases/line_ranges_outside_source.py:
+  line 4: '(' followed by 0 spaces, expected 1
+  line 4: ')' preceded by 0 spaces, expected 1
+  line 5: '(' followed by 0 spaces, expected 1
+  line 5: ')' preceded by 0 spaces, expected 1
+  line 6: '(' followed by 0 spaces, expected 1
+  line 6: ')' preceded by 0 spaces, expected 1
+  line 7: '(' followed by 0 spaces, expected 1
+  line 7: ')' preceded by 0 spaces, expected 1
+cases/line_ranges_two_passes.py:
+  line 11: ')' preceded by 0 spaces, expected 1
+cases/pattern_matching_simple.py:
+  line 40: '(' followed by 33 spaces, expected 1
+  line 40: ')' preceded by 3 spaces, expected 1
+  line 73: '(' followed by 24 spaces, expected 1
+  line 73: ')' preceded by 3 spaces, expected 1
+  line 87: '(' followed by 6 spaces, expected 1
+  line 87: ')' preceded by 3 spaces, expected 1
+  line 89: '(' followed by 6 spaces, expected 1
+  line 89: ')' preceded by 3 spaces, expected 1
+cases/remove_newline_after_code_block_open.py:
+  line 36: '(' followed by 4 spaces, expected 1
+  line 36: ')' preceded by 38 spaces, expected 1
+  line 41: '(' followed by 4 spaces, expected 1
+  line 41: ')' preceded by 39 spaces, expected 1
+  line 48: '(' followed by 4 spaces, expected 1
+  line 48: ')' preceded by 39 spaces, expected 1
+cases/single_line_format_skip_with_multiple_comments.py:
+  line 4: '(' followed by 8 spaces, expected 1
+  line 4: ')' preceded by 6 spaces, expected 1
+cases/string_prefixes.py:
+  line 4: '(' followed by 10 spaces, expected 1
+  line 4: ')' preceded by 3 spaces, expected 1
+  line 9: '(' followed by 5 spaces, expected 1
+  line 9: ')' preceded by 6 spaces, expected 1
+line_ranges_formatted/basic.py:
+  line 10: '(' followed by 0 spaces, expected 1
+  line 10: ')' preceded by 0 spaces, expected 1
+  line 15: '[' followed by 0 spaces, expected 1
+  line 15: ']' preceded by 0 spaces, expected 1
+miscellaneous/blackd_diff.py:
+  line 2: '[' followed by 0 spaces, expected 1
+  line 3: ']' preceded by 0 spaces, expected 1
+  line 5: '(' followed by 3 spaces, expected 1
+miscellaneous/debug_visitor.py:
+  line 9: '(' followed by 4 spaces, expected 1
+  line 15: '(' followed by 4 spaces, expected 1
+  line 18: '(' followed by 4 spaces, expected 1
+  line 22: '(' followed by 5 spaces, expected 1
+  line 23: '(' followed by 5 spaces, expected 1
+miscellaneous/decorators.py:
+  line 10: '(' followed by 0 spaces, expected 1
+  line 10: ')' preceded by 0 spaces, expected 1
+  line 16: '[' followed by 0 spaces, expected 1
+  line 16: ']' preceded by 0 spaces, expected 1
+  line 22: '[' followed by 0 spaces, expected 1
+  line 22: '[' followed by 0 spaces, expected 1
+  line 22: ']' preceded by 0 spaces, expected 1
+  line 22: ']' preceded by 0 spaces, expected 1
+miscellaneous/python2_detection.py:
+  line 2: '(' followed by 0 spaces, expected 1
+  line 2: ')' preceded by 0 spaces, expected 1
+  line 6: '(' followed by 0 spaces, expected 1
+  line 6: ')' preceded by 0 spaces, expected 1
+  line 12: '(' followed by 0 spaces, expected 1
+  line 12: ')' preceded by 0 spaces, expected 1
+  line 24: '(' followed by 0 spaces, expected 1
+  line 24: '(' followed by 0 spaces, expected 1
+  line 24: ')' preceded by 0 spaces, expected 1
+  line 24: ')' preceded by 0 spaces, expected 1
+  line 28: '(' followed by 0 spaces, expected 1
+  line 28: ')' preceded by 0 spaces, expected 1
+  line 32: '(' followed by 0 spaces, expected 1
+  line 32: ')' preceded by 0 spaces, expected 1
+
+273 bracket-spacing violations found

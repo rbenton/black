@@ -12,14 +12,20 @@ fork. Everything else should track upstream as closely as possible.
 - `master` — mirrors upstream `psf/black` (remotes: `psf`, `upstream`, both point at
   `psf/black`; `origin` is `rbenton/black`).
 - `a11y` — the feature branch. Branched from `master` at a release tag (currently
-  `26.5.1`, originally `26.3.1`). Carries exactly 3 commits on top of that tag:
+  `26.5.1`, originally `26.3.1`). Carries a small, fixed number of commits on top of
+  that tag — currently 4:
   1. `5d11fd2f` — the bracket-spacing feature itself (logic + regenerated fixtures +
      `scripts/regenerate_test_data.py` + `scripts/check_bracket_spacing.py`).
   2. `2abf297b` — pre-commit flake8/mypy fixups.
   3. `00dd8f11` — editable-install schema entrypoint test fix.
-- `a11y` is a **stable, reused branch name** — not renamed per release. It gets rebased
-  onto each new upstream tag, not merged, and not re-created via cherry-pick onto a
-  fresh branch each time.
+  4. `71aad679` — fix `Line.__str__` mutating a shared leaf's prefix during split
+     arbitration (discarded candidate splits were corrupting the accepted split's
+     bracket spacing — see "Where the feature actually lives" below). Bug fixes to the
+     feature itself get their own commit appended here rather than being folded into
+     `5d11fd2f` — keep this list in sync when that happens.
+- `a11y` is a **stable, reused branch name** — not renamed per release. It gets
+  rebased onto each new upstream tag, not merged, and not re-created via cherry-pick
+  onto a fresh branch each time.
 
 ## Where the feature actually lives
 
@@ -80,21 +86,40 @@ If a sync run reports these files as "updated" by the script, that's the bug rea
    regenerated case file and asserts: every non-empty `(`, `[`, `{` is followed by
    exactly one space, every matching close is preceded by exactly one space, and empty
    bracket pairs (`()`, `[]`, `{}`) are untouched (multi-line splits and f-string `{}`
-   are excluded). It is expected to print a nonzero count of violations — several
-   fixtures have pre-existing (pre-fork) bracket-spacing quirks unrelated to this
-   feature: `fmt: off`/`fmt: skip` regions that preserve original spacing verbatim
-   (`pattern_matching_simple.py`, `string_prefixes.py`,
-   `remove_newline_after_code_block_open.py`,
-   `single_line_format_skip_with_multiple_comments.py`,
-   `line_ranges_fmt_off_overlap.py`), `python2_detection.py` (never reformatted —
-   `SKIP (format error)`, invalid syntax pre-3.x), `debug_visitor.py` (docstring text,
-   not real brackets), and a genuine upstream bug where chained subscript trailers
-   (`)["a"]["b"]["c"]`) get inconsistent internal spacing
-   (`trailing_commas_in_leading_parts.py`, `preview_long_strings__regression.py`) —
-   pre-existing, not introduced by this fork. **The check that matters:** diff the
-   violation list against the previous sync's output (or diff each flagged file against
-   its pre-rebase content with `git show <old-tag-commit>:<path>`) — any _new_ violation
-   on a file that actually changed is the real signal.
+   are excluded). It is expected to print a nonzero count of violations.
+
+   **Why violations are expected, as a rule (not a fixed file list):** any fixture whose
+   expected output contains a `# fmt: off`/`# fmt: skip` region, or any `line_ranges_*`
+   fixture (partial-range formatting also preserves the untouched part verbatim),
+   necessarily preserves original (pre-fork) spacing in that region — that's the whole
+   point of those directives, and it applies to the entire `fmtonoff*.py`/`fmtskip*.py`/
+   `line_ranges_*.py` family, not just a few named examples. Also expected: files in
+   `regenerate_test_data.py`'s `skip_files` list plus `blackd_diff.py` (never
+   reformatted — intentionally malformatted/skip-marked inputs), `python2_detection.py`
+   (never reformatted — `SKIP (format error)`, invalid syntax pre-3.x), and
+   `debug_visitor.py` (violations are in docstring text, not real brackets). Do not try
+   to keep this doc's file list exhaustive — it will drift. Treat "which files are
+   expected to violate" as a _category test_ (does the violation sit in an
+   fmt-off/fmt-skip/line-ranges/never-reformatted region?), not a lookup against names
+   written down here.
+
+   **The check that matters — diff against a committed baseline, not memory or this
+   doc's examples:**
+
+   ```
+   PYTHONPATH=. python scripts/check_bracket_spacing.py > /tmp/bracket_check.txt 2>/dev/null
+   diff tests/data/bracket_spacing_baseline.txt /tmp/bracket_check.txt
+   ```
+
+   - Lines that _disappear_ from the baseline are fine (a fixture got fixed/simplified
+     upstream) — just re-save the baseline (see below).
+   - Lines that are _new_ on a file that actually changed in this sync are the real
+     signal — investigate before regenerating the baseline.
+   - Once you've confirmed the diff is clean (only expected/explained changes),
+     regenerate the baseline so the next sync starts from an accurate snapshot:
+     `PYTHONPATH=. python scripts/check_bracket_spacing.py > tests/data/bracket_spacing_baseline.txt 2>/dev/null`
+     and commit it alongside the fixture changes.
+
 5. Run the full test suite (`pytest`) plus pre-commit (`flake8`, `mypy`). **After
    running pytest, run `git status`.** A few tests (currently `test_python315`,
    `test_python37` in `tests/test_black.py`) call `invokeBlack([str(source_path), ...])`
