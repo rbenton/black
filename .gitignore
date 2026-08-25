@@ -17,7 +17,6 @@ dist/
 pip-wheel-metadata/
 .eggs
 
-src/_black_version.py
 .idea
 
 .dmypy.json

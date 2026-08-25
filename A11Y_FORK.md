@@ -23,9 +23,9 @@ fork. Everything else should track upstream as closely as possible.
      bracket spacing — see "Where the feature actually lives" below). Bug fixes to the
      feature itself get their own commit appended here rather than being folded into
      `5d11fd2f` — keep this list in sync when that happens.
-- `a11y` is a **stable, reused branch name** — not renamed per release. It gets
-  rebased onto each new upstream tag, not merged, and not re-created via cherry-pick
-  onto a fresh branch each time.
+- `a11y` is a **stable, reused branch name** — not renamed per release. It gets rebased
+  onto each new upstream tag, not merged, and not re-created via cherry-pick onto a
+  fresh branch each time.
 
 ## Where the feature actually lives
 
@@ -44,10 +44,13 @@ failing:
   call/collection across lines. Worth scanning for new splitting paths that might bypass
   the two functions above.
 
-**Not part of the feature — ignore/drop:** `_black_version.py`. `pip install -e ".[d]"`
-regenerates this as a side effect during the sync workflow (setuptools-scm dev-version
-stamp); it reappears as an untracked/staged file after every rebase. Not load-bearing
-for the a11y behavior — delete it before committing.
+**Versioning:** the fork pins a static `version` in `pyproject.toml` (mirrored in
+`src/_black_version.py`) instead of deriving it from git tags via `hatch-vcs`.
+Installers like `uv`/`pip` fetch this repo via a shallow clone of the pinned commit SHA,
+which drops tags — `hatch-vcs`'s git-describe then falls back to a bogus ancient version
+(observed: `19.10b1.dev...`), which trips Dependabot vulnerability alerts against the
+real `black` PyPI package's old-version advisories. A static version sidesteps that
+entirely. Bump it every sync — see step 3 below.
 
 **`scripts/regenerate_test_data.py` skip list — files it must never touch:**
 
@@ -75,10 +78,15 @@ If a sync run reports these files as "updated" by the script, that's the bug rea
    Conflicts will show up exactly where upstream also touched bracket-related code or
    the same test fixtures — that's the signal to read closely, not just resolve
    mechanically.
-3. Regenerate fixtures: run `python scripts/regenerate_test_data.py`. This bulk-rewrites
+3. Bump the static version to match the new upstream tag: update `version = "..."` in
+   `pyproject.toml` (`[project]`) and the matching `version = "..."` in
+   `src/_black_version.py`. Keep them identical. This is what consumers pinning this
+   fork by commit SHA actually see in their lockfiles — an unbumped version here means a
+   package manager (and Dependabot) will keep seeing the old number.
+4. Regenerate fixtures: run `python scripts/regenerate_test_data.py`. This bulk-rewrites
    the `# output` sections of `tests/data/**` to match whatever the rebased code now
    produces.
-4. **Run the bracket-invariant check before trusting step 3's output.**
+5. **Run the bracket-invariant check before trusting step 4's output.**
    `regenerate_test_data.py` blindly accepts the new output as correct — if the
    whitespace logic broke, it will happily bake the wrong spacing into fixtures and the
    suite will still pass. Guard against this with
@@ -120,7 +128,7 @@ If a sync run reports these files as "updated" by the script, that's the bug rea
      `PYTHONPATH=. python scripts/check_bracket_spacing.py > tests/data/bracket_spacing_baseline.txt 2>/dev/null`
      and commit it alongside the fixture changes.
 
-5. Run the full test suite (`pytest`) plus pre-commit (`flake8`, `mypy`). **After
+6. Run the full test suite (`pytest`) plus pre-commit (`flake8`, `mypy`). **After
    running pytest, run `git status`.** A few tests (currently `test_python315`,
    `test_python37` in `tests/test_black.py`) call `invokeBlack([str(source_path), ...])`
    directly on a real fixture path under `tests/data/`, which reformats that file on
@@ -129,10 +137,11 @@ If a sync run reports these files as "updated" by the script, that's the bug rea
    no-op; with the a11y feature it bracket-spaces the source section too, silently
    mutating a tracked fixture (`tests/data/cases/python315.py` as of the 26.5.1 sync).
    `git checkout --` any such file before committing — do not commit the mutation.
-6. Done when: full suite passes, invariant-check script passes clean, and any _new or
-   changed_ upstream test fixture touching brackets has been visually confirmed to have
-   the expected single-space padding.
-7. Push the rebased branch: `git push --force-with-lease origin a11y` (force-push is
+7. Done when: full suite passes, invariant-check script passes clean, the version bump
+   from step 3 is in place in both files, and any _new or changed_ upstream test fixture
+   touching brackets has been visually confirmed to have the expected single-space
+   padding.
+8. Push the rebased branch: `git push --force-with-lease origin a11y` (force-push is
    expected here — rebase rewrites history on a feature-only branch).
 
 ## Known edge-case rules encoded in the feature (from the original commit)
