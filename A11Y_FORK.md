@@ -50,7 +50,9 @@ Installers like `uv`/`pip` fetch this repo via a shallow clone of the pinned com
 which drops tags — `hatch-vcs`'s git-describe then falls back to a bogus ancient version
 (observed: `19.10b1.dev...`), which trips Dependabot vulnerability alerts against the
 real `black` PyPI package's old-version advisories. A static version sidesteps that
-entirely. Bump it every sync — see step 3 below.
+entirely — it must always equal the upstream tag `a11y` is currently rebased onto (no
+fork-specific suffix), so a package manager/Dependabot sees exactly the upstream
+version's fix status. Update it every sync — see step 3 below.
 
 **`scripts/regenerate_test_data.py` skip list — files it must never touch:**
 
@@ -78,11 +80,12 @@ If a sync run reports these files as "updated" by the script, that's the bug rea
    Conflicts will show up exactly where upstream also touched bracket-related code or
    the same test fixtures — that's the signal to read closely, not just resolve
    mechanically.
-3. Bump the static version to match the new upstream tag: update `version = "..."` in
-   `pyproject.toml` (`[project]`) and the matching `version = "..."` in
-   `src/_black_version.py`. Keep them identical. This is what consumers pinning this
-   fork by commit SHA actually see in their lockfiles — an unbumped version here means a
-   package manager (and Dependabot) will keep seeing the old number.
+3. Set the static version to exactly the new upstream tag (no fork-specific suffix):
+   update `version = "..."` in `pyproject.toml` (`[project]`) and the matching
+   `version = "..."` in `src/_black_version.py`. Keep them identical to each other and
+   to the tag. This is what consumers pinning this fork by commit SHA actually see in
+   their lockfiles — a stale version here means a package manager (and Dependabot) will
+   keep seeing the old number.
 4. Regenerate fixtures: run `python scripts/regenerate_test_data.py`. This bulk-rewrites
    the `# output` sections of `tests/data/**` to match whatever the rebased code now
    produces.

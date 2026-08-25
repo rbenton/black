@@ -63,7 +63,7 @@ dependencies = [
     "tomli>=1.1.0; python_version<'3.11'",
     "typing-extensions>=4.0.1; python_version<'3.11'",
 ]
-version = "26.5.2"   # bump manually per accessibility patch release
+version = "26.5.1"   # must equal the upstream psf/black tag `a11y` is rebased onto
 dynamic = ["readme"]
 
 [project.optional-dependencies]
